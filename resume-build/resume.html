@@ -62,20 +62,21 @@
     .contact-bar {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 4px 11px;
-      font-size: 8.1pt;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 7px;
+      font-size: 7.7pt;
       color: #475569;
     }
 
     .contact-item {
       display: inline-flex;
       align-items: center;
-      gap: 3px;
     }
 
     .contact-sep {
       color: #94a3b8;
+      font-size: 7pt;
     }
 
     /* SECTION */
@@ -279,7 +280,7 @@
   <!-- HEADER -->
   <header class="header">
     <h1 class="name">Justin Joe Mathew</h1>
-    <div class="tagline">B.Tech CSE Undergrad @ Amal Jyothi · Software Prototyping, Web Systems &amp; Drone Tech Enthusiast</div>
+    <div class="tagline">B.Tech CSE Undergrad @ Amal Jyothi · Software Engineering, Simulation &amp; Edge Systems</div>
     <div class="contact-bar">
       <span class="contact-item"><a href="mailto:jvstin47@gmail.com">jvstin47@gmail.com</a></span>
       <span class="contact-sep">•</span>
@@ -300,20 +301,20 @@
     <h2 class="section-title">Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-row">
-        <span class="skill-label">Working Knowledge</span>
-        <span class="skill-value">Python, JavaScript, TypeScript, C (Academic Core), HTML5, CSS3, Tailwind CSS</span>
+        <span class="skill-label">Languages</span>
+        <span class="skill-value">Python, C (Academic Core), JavaScript, TypeScript · <i>Familiar:</i> C++, Kotlin, SQL</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Familiar with / Exploring</span>
-        <span class="skill-value">C++, Kotlin, Dart, SQL, Node.js Basics</span>
+        <span class="skill-label">Web &amp; Frontend</span>
+        <span class="skill-value">React, Next.js, Vite, HTML5, CSS3, Tailwind CSS</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Web &amp; Prototyping Tools</span>
-        <span class="skill-value">React, Next.js, Vite, Git &amp; GitHub, Linux / Bash Shell, Arduino (Uno Q), Figma, Vercel</span>
+        <span class="skill-label">Tools &amp; Systems</span>
+        <span class="skill-value">Git, GitHub, Linux / Bash, Vercel, Arduino Uno Q, Figma</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Data, Simulation &amp; APIs</span>
-        <span class="skill-value">NumPy (Vectorized Simulation), FastF1 Telemetry API, REST APIs, JSON Data Streams</span>
+        <span class="skill-label">Data &amp; APIs</span>
+        <span class="skill-value">NumPy (Vectorized Operations), FastF1 Telemetry API, REST APIs, JSON</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">Languages (Spoken)</span>
@@ -338,9 +339,9 @@
         <span class="project-stack">Python · NumPy · FastF1 API · React</span>
       </div>
       <ul class="bullet-list">
-        <li>Architected a vectorized Python simulation tool using <strong>NumPy arrays</strong> to execute <strong>10,000 stochastic race runs</strong> in milliseconds, evaluating tyre degradation curves and safety-car probabilities.</li>
-        <li>Integrated real-world Grand Prix telemetry feeds via the <strong>FastF1 API</strong> to calibrate stint wear rates and fuel-burn lap deltas.</li>
-        <li>Built an interactive <strong>React web dashboard</strong> deploying real-time stint degradation graphs and optimal pit-window matrices.</li>
+        <li>Built a vectorized Python simulation tool using <strong>NumPy arrays</strong> to run <strong>10,000 stochastic race iterations</strong>, modeling non-linear tyre degradation curves and safety-car probabilities.</li>
+        <li>Integrated historical Grand Prix telemetry via the <strong>FastF1 API</strong> to calibrate stint tyre wear rates and fuel-burn lap deltas against real track data.</li>
+        <li>Developed an interactive <strong>React dashboard</strong> to compare multi-stint pit strategies and visualize degradation curves.</li>
       </ul>
     </div>
 
@@ -357,9 +358,9 @@
         <span class="project-stack">TypeScript · Next.js · WebSockets · Rapid Prototyping</span>
       </div>
       <ul class="bullet-list">
-        <li>Engineered a responsive web application prototype designed to streamline emergency triage reporting for underserved communities.</li>
-        <li>Prototyped incoming distress signal classification, parsing urgency levels and routing incident coordinates to verified local field responders.</li>
-        <li>Secured <strong>1st Place at ACM Vibefest Hackathon 2026</strong> for rapid system design, live functional demo, and practical crisis impact.</li>
+        <li>Engineered a crisis triage web application prototype using <strong>Next.js</strong> and <strong>TypeScript</strong> to streamline emergency request dispatching for underserved communities.</li>
+        <li>Implemented urgency classification logic to parse incoming distress signals, prioritize critical cases, and route incident coordinates to responders.</li>
+        <li>Secured <strong>1st Place at ACM Vibefest Hackathon 2026</strong> for rapid system design, functional interactive demo, and practical triage workflow.</li>
       </ul>
     </div>
 
@@ -376,9 +377,9 @@
         <span class="project-stack">Canvas 2D · React 19 · Vite · Hardware-Accelerated Scrubber</span>
       </div>
       <ul class="bullet-list">
-        <li>Designed and developed an interactive biographical digital monograph chronicling Dr. Lakshmi Sahgal (INA) for a competitive web design event.</li>
-        <li>Implemented a smooth <strong>Canvas 2D frame-scrubber engine</strong> cycling through 3,100+ frames at 60 FPS synchronized with responsive prose.</li>
-        <li>Engineered with modern editorial typography, responsive CSS layout hierarchy, and minimal latency media buffering.</li>
+        <li>Designed and built an interactive biographical digital monograph commemorating Dr. Lakshmi Sahgal (INA) for a competitive web design event.</li>
+        <li>Implemented an optimized <strong>HTML5 Canvas 2D frame-scrubber engine</strong> cycling through 3,100+ frames synchronized with scroll progress at up to 60 FPS.</li>
+        <li>Constructed a responsive editorial layout with modular typography, asset pre-buffering, and zero-jank scroll transitions.</li>
       </ul>
     </div>
 
@@ -394,9 +395,9 @@
         <span class="project-stack">Drone Systems Research · Hardware Architecture · Arduino Uno Q</span>
       </div>
       <ul class="bullet-list">
-        <li>Researched and authored a disaster-response UAV systems proposal addressing aerial search-and-rescue under zero-cloud, communication blackout conditions.</li>
-        <li>Incorporated hardware edge architecture insights gained from hands-on volunteering with the <strong>Arduino Uno Q board</strong> at the <strong>Blankspace Hackathon (powered by Arduino)</strong>.</li>
-        <li>Built on 3+ years of active independent research, UAV literature exploration, and continuous technical mentorship from drone community resource persons.</li>
+        <li>Authored an aerial search-and-rescue UAV systems proposal for disaster zones experiencing communication blackouts, shortlisted for <strong>Smart India Hackathon 2026</strong>.</li>
+        <li>Proposed a dual-compute architecture separating low-level flight stabilization from onboard edge inference, incorporating hands-on prototyping insights from the <strong>Arduino Uno Q</strong>.</li>
+        <li>Designed a concept for offline peer-to-peer telemetry over LoRa and localized thermal detection, refined through UAV literature review and expert mentorship.</li>
       </ul>
     </div>
   </section>
@@ -410,7 +411,7 @@
       <li><span class="badge-win">Stage 1 Winner</span> — <strong>Idea From Industry Challenge Season 2</strong> (MakerHub IEDC · BIRAC · MoE, Jan 2026) — Smart transit telemetry &amp; fare concept.</li>
       <li><span class="badge-shortlist">National Shortlist</span> — <strong>Smart India Hackathon (SIH 2026)</strong> (Ministry of Education Innovation Cell &amp; AICTE) — Search &amp; Rescue UAV systems proposal.</li>
       <li><span class="badge-win">Double 3rd Prize (Podium)</span> — <strong>Azure 2026</strong> (Feb 2026) — 3rd Prize in Extempore English &amp; 3rd Prize in JamSpace (Just A Minute) impromptu speaking.</li>
-      <li><strong>Participant</strong> — <strong>NASA Space Apps Challenge 2025</strong> (Aerospace open data challenge) &amp; <strong>K-DISC YIP 8.0</strong> (Govt. of Kerala).</li>
+      <li><strong>Participant</strong> — <strong>NASA Space Apps Challenge 2025</strong> (Aerospace open data) &amp; <strong>K-DISC YIP 8.0</strong> (Govt. of Kerala).</li>
     </ul>
   </section>
 
@@ -433,7 +434,7 @@
     </div>
 
     <div class="adaptability-box">
-      <strong>Multicultural Adaptability &amp; Versatility:</strong> Educated across 5 schools spanning <strong>Dubai (UAE), New Delhi, and multiple regions of Kerala</strong>. Fluent in English, Malayalam, and Hindi. Naturally adaptable, communicative, and comfortable integrating quickly into diverse teams.
+      <strong>Multicultural Adaptability:</strong> Educated across 5 schools spanning <strong>Dubai (UAE), New Delhi, and Kerala</strong>. Fluent in English, Malayalam, and Hindi. Highly adaptable in diverse, fast-moving teams.
     </div>
   </section>
 
