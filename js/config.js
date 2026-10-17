@@ -31,7 +31,7 @@
   const config = {
     env: isLocalhost ? 'development' : 'production',
     version: '2.1.0',
-    siteUrl: 'https://jvstin47.github.io',
+    siteUrl: 'https://jvstin47.github.io/47',
     
     // API Services Configuration
     api: {

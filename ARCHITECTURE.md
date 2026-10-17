@@ -2,7 +2,7 @@
 
 ## 1. System Overview
 
-This repository powers **Justin Joe Mathew's engineering portfolio** ([jvstin47.github.io](https://jvstin47.github.io)), showcasing autonomous systems, edge AI micro-UAVs (SIH 26177), markerless 6-DoF spatial camera tracking (SIH 26169), and stochastic Monte Carlo race simulation engines.
+This repository powers **Justin Joe Mathew's engineering portfolio** ([jvstin47.github.io/47](https://jvstin47.github.io/47/)), showcasing autonomous systems, edge AI micro-UAVs (SIH 26177), markerless 6-DoF spatial camera tracking (SIH 26169), and stochastic Monte Carlo race simulation engines.
 
 The site is built with a **modular vanilla JavaScript & CSS architecture** designed for zero-build static hosting on GitHub Pages, while adhering to modern enterprise design principles:
 - **Clean Separation of Concerns**: Pure domain models and compute engines live in `js/services/`, completely decoupled from DOM presentation components in `js/components/`.
