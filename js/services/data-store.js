@@ -28,8 +28,8 @@
 
   const SKILLS = {
     coreSystems: ['C', 'C++', 'Python 3.11', 'Kotlin', 'TypeScript', 'Dart', 'Linux Shell'],
-    aiAndMath: ['NumPy', 'PyTorch', 'Demucs v4', 'YOLOv8', 'FastF1', 'Bellman DP', 'Monte Carlo'],
-    mobileAndEdge: ['Jetpack Compose', 'Room SQLite', 'Wear OS', 'Flutter', 'Qualcomm RB5', 'Arduino'],
+    aiAndMath: ['NumPy', 'PyTorch', 'Demucs v4', 'YOLOv8', 'FastF1', 'Monte Carlo Simulation'],
+    mobileAndEdge: ['Android Native', 'Room SQLite', 'Flutter', 'Qualcomm RB5', 'Arduino Uno Q'],
     webAnd3D: ['React 19', 'Next.js', 'Canvas 2D', 'Three.js', 'WebGL', 'Tailwind', 'FastAPI']
   };
 
@@ -38,6 +38,7 @@
     { title: 'Phase 1 Winner', event: 'Idea From Industry S2 (MakerHub / BIRAC / MoE)', icon: '🏆' },
     { title: '1st Place', event: 'AI Club Ideathon 2026', icon: '🥇' },
     { title: 'Shortlisted', event: 'Smart India Hackathon 2026 (SIH 26177 Qualcomm & SIH 26169 Tracks)', icon: '🎖️' },
+    { title: 'Podium (Double 3rd Prize)', event: 'Azure 2026 (Extempore English & JamSpace)', icon: '🎙️' },
     { title: 'State Participant', event: 'K-DISC Young Innovators Programme (YIP 8.0), Govt of Kerala', icon: '🌱' },
     { title: 'Global Participant', event: 'NASA Space Apps Challenge 2025', icon: '🚀' }
   ];
@@ -51,7 +52,7 @@
       sihTrack: 'SIH 26177 (Qualcomm Robotics Track)',
       repoUrl: 'https://github.com/jvstin47/Phoenix-SIH26177-SAR-UAV',
       liveUrl: 'https://phoenix-sar-uav.vercel.app',
-      summary: 'DGCA-compliant sub-2kg search & rescue drone with on-device ThermalNet YOLOv8 inference (<18.4ms) and 5km zero-cloud LoRa 915 MHz telemetry mesh.'
+      summary: 'Systems proposal for an autonomous search & rescue drone with dual-compute architecture, on-device thermal detection, and 5km zero-cloud LoRa 915 MHz telemetry mesh.'
     },
     {
       id: '02',
@@ -66,10 +67,9 @@
       id: '03',
       slug: 'f1-strategy',
       title: 'F1 Monte Carlo Race Strategy Simulator',
-      category: 'Stochastic Simulation / DP',
+      category: 'Stochastic Simulation / Strategy',
       repoUrl: 'https://github.com/jvstin47/F1-Monte-Carlo-Race-Strategy-Simulator',
-      liveUrl: 'https://f1-monte-carlo-race-strategy-simula.vercel.app',
-      summary: '10,000-pass vectorized NumPy Monte Carlo race simulator paired with a Bellman dynamic programming stochastic backward induction pit window solver.'
+      summary: '10,000-iteration vectorized NumPy Monte Carlo race simulator paired with multi-stint pit strategy optimization.'
     },
     {
       id: '04',
@@ -106,10 +106,10 @@
     {
       id: '08',
       slug: 'opportunity-os',
-      title: 'Opportunity OS — Executive Task Architecture',
-      category: 'Mobile / Wear OS',
+      title: 'Opportunity OS — Task Architecture Prototype',
+      category: 'Mobile / Android Native',
       repoUrl: 'https://github.com/jvstin47/Opportunity_Android',
-      summary: 'Offline-first cadence planner engineered with Jetpack Compose, Room SQLite, Kotlin Coroutines, and Wear OS ProtoLayout tiles.'
+      summary: 'Offline-first task planner prototype engineered with Kotlin, Room SQLite, and WorkManager background synchronization.'
     },
     {
       id: '09',
@@ -145,12 +145,12 @@
     ],
     '~/projects/phoenix-uav': ['README.md', 'telemetry.py', 'npu_bench.log', 'mission_cockpit.url', 'hardware_specs.txt'],
     '~/projects/camera-tracking': ['README.md', 'tracking_pipeline.py', 'pose_estimator.py', 'repo.url', 'freed_protocol.txt'],
-    '~/projects/f1-strategy': ['README.md', 'bellman_solver.py', 'monte_carlo_10k.py', 'live_demo.url', 'degradation_model.txt'],
+    '~/projects/f1-strategy': ['README.md', 'strategy_solver.py', 'monte_carlo_10k.py', 'degradation_model.txt'],
     '~/projects/captain-lakshmi': ['README.md', 'canvas_renderer.ts', 'frame_stream.json', 'live_demo.url'],
     '~/projects/chord-analyzer': ['README.md', 'demucs_pipeline.py', 'btc_transformer.py', 'mir_pipeline.txt'],
     '~/projects/aroggyagram': ['README.md', 'triage_agent.ts', 'proximity_router.ts', 'clinical_flow.txt'],
     '~/projects/autometer': ['README.md', 'pulse_sensor.dart', 'upi_generator.dart', 'fare_rules.txt'],
-    '~/projects/opportunity-os': ['README.md', 'task_engine.kt', 'wear_tile.kt', 'state_machine.txt'],
+    '~/projects/opportunity-os': ['README.md', 'task_engine.kt', 'work_manager.kt', 'state_machine.txt'],
     '~/projects/crt-lock': ['README.md', 'crt_solver.ts', 'webgl_tumbler.ts', 'cryptography.txt'],
     '~/projects/uno-q-arena': ['README.md', 'rl_policy.py', 'genesis_emulator.c', 'reward_function.txt'],
     '~/telemetry': ['f1_pit_telemetry.json', 'sar_uav_telemetry.py', 'qualcomm_npu_bench.log']
@@ -159,7 +159,7 @@
   const FILE_CONTENTS = {
     'bio.txt': 'Justin Joe Mathew — Systems Builder & Software Engineer.\nCurrently in 2nd Year B.Tech CSE (Class of 2029) @ Amal Jyothi College of Engineering, Kerala.\nFocus: Autonomous edge AI micro-UAVs (SIH 26177), spatial camera tracking (SIH 26169), vectorized race simulation, and offline mobile platforms.\nGitHub: https://github.com/jvstin47 | Email: jvstin47@gmail.com',
     'resume.pdf': 'Latest 2026 Engineering Resume available at Justin_Mathew_Resume.pdf\nDirect download: Justin_Mathew_Resume.pdf',
-    'f1_pit_telemetry.json': '{\n  "sim_runs": 10000,\n  "tyre_compounds": ["Soft", "Medium", "Hard"],\n  "solver": "Bellman Dynamic Programming",\n  "telemetry_stream": "FastF1 API v3.4"\n}',
+    'f1_pit_telemetry.json': '{\n  "sim_runs": 10000,\n  "tyre_compounds": ["Soft", "Medium", "Hard"],\n  "solver": "Monte Carlo Multi-Stint Strategy",\n  "telemetry_stream": "FastF1 API v3.4"\n}',
     'sar_uav_telemetry.py': '# Phoenix X (SIH 26177) Edge AI & Telemetry Dispatch\ndef get_telemetry():\n    return {\n        "platform": "Qualcomm Robotics RB5 NPU + Pixhawk FC",\n        "vision_model": "ThermalNet YOLOv8 (<20ms latency)",\n        "mesh_link": "LoRa 915 MHz P2P (5km range)",\n        "cockpit": "https://phoenix-sar-uav.vercel.app"\n    }',
     'qualcomm_npu_bench.log': '[RB5 NPU] ThermalNet YOLOv8: 18.4ms/frame | LoRa 915MHz P2P: 5.2km range OK | Zero Cloud: Verified',
     'README.md': '# Monocoque Systems Shell\nWelcome to Justin Joe Mathew\'s interactive systems console.\n• Use `ls` to list available projects and files.\n• Use `cat <filename>` to open files inside the full-screen interactive reader.\n• Use `cd <dir>` or natural aliases like `cd phoenix` to navigate.\n• Try `bench` to run a 1,000-pass Monte Carlo compute benchmark in your browser.',
@@ -301,27 +301,26 @@ Byte 28: Modulo 256 Checksum byte`,
     /* 03. F1-STRATEGY */
     '~/projects/f1-strategy/README.md': `# F1 Monte Carlo Race Strategy Simulator
 
-**Stochastic Simulation Engine** · Bellman Dynamic Programming · Real-Time Telemetry
+**Stochastic Simulation Engine** · Strategy Optimization · FastF1 Telemetry
 
 ## Executive Overview
 In Formula 1, race victories are determined by navigating thousands of stochastic non-linearities: compound thermal graining, unpredictable Safety Car and VSC neutralizations, fuel-burn lap-time delta offsets, and pit-lane traffic windows.
 
 ## Engineering Architecture
 1. **Vectorized NumPy Monte Carlo:**
-   - Computes 10,000 full-length 57-lap Grand Prix simulations in < 45ms.
-   - Non-linear tyre compound degradation curves calibrated with real telemetry feeds from the FastF1 API.
+   - Computes 10,000 full-length 57-lap Grand Prix simulations.
+   - Non-linear tyre compound degradation curves informed by real telemetry feeds from the FastF1 API.
 
-2. **Bellman Equation Dynamic Programming:**
-   - Stochastic backward induction solver identifying globally optimal pit stops under uncertain track temperatures and rain likelihood.
-   - Live interactive front-end deployed with high-framerate probability graphs.
+2. **Strategy Optimization Engine:**
+   - Evaluates multi-stint pit strategies identifying optimal stop windows under uncertain track temperatures and rain likelihood.
+   - High-performance data pipelines and interactive probability visualizations.
 
-## Live Application
-• Web Demo: https://f1-monte-carlo-race-strategy-simula.vercel.app
+## Repository
 • GitHub: https://github.com/jvstin47/F1-Monte-Carlo-Race-Strategy-Simulator`,
-    '~/projects/f1-strategy/bellman_solver.py': `import numpy as np
+    '~/projects/f1-strategy/strategy_solver.py': `import numpy as np
 
 def solve_optimal_pit_window(total_laps=57, tyre_compounds=["Soft", "Medium", "Hard"]):
-    """Bellman Dynamic Programming solver for optimal F1 pit stops"""
+    """Monte Carlo Multi-Stint Strategy solver for optimal F1 pit stops"""
     V = np.full((total_laps + 1, len(tyre_compounds), 60), np.inf)
     policy = np.zeros_like(V, dtype=int)
     
@@ -360,7 +359,6 @@ def run_monte_carlo_10k(laps=57, simulations=10000):
         "p95_total_time_s": float(np.percentile(cumulative_times, 95)),
         "p05_total_time_s": float(np.percentile(cumulative_times, 5))
     }`,
-    '~/projects/f1-strategy/live_demo.url': 'https://f1-monte-carlo-race-strategy-simula.vercel.app',
     '~/projects/f1-strategy/degradation_model.txt': `PIRELLI 2026 DEGRADATION CURVE MATRICES:
 • C3 Soft: Base Delta 0.00s | Wear Delta: +0.082s * (lap^1.42) | Cliff: Lap 18
 • C2 Medium: Base Delta +0.55s | Wear Delta: +0.041s * (lap^1.30) | Cliff: Lap 32
@@ -506,12 +504,12 @@ Designed to modernize informal transit networks (auto-rickshaws, shared taxis) w
 • Waiting Time Surcharge: ₹1.50 per min for vehicle speed < 5 km/h (after 10 min grace)`,
 
     /* 08. OPPORTUNITY-OS */
-    '~/projects/opportunity-os/README.md': `# Opportunity OS — Executive Task Architecture
+    '~/projects/opportunity-os/README.md': `# Opportunity OS — Task Architecture Prototype
 
-**Offline-First Native Android / Wear OS** · Unidirectional Data Flow (UDF)
+**Offline-First Native Android** · Unidirectional Data Flow (UDF)
 
 ## Executive Overview
-A zero-bloat executive cadence system designed to eliminate digital fatigue. Built with Kotlin Coroutines, Room SQLite, Jetpack Compose, and custom Wear OS ProtoLayout tiles, ensuring instant sub-10ms UI latency completely offline.
+A clean task prioritization architecture prototype designed for focus. Built with Kotlin, Room SQLite database, and WorkManager background task execution, ensuring responsive local performance completely offline.
 
 ## Repository
 • GitHub: https://github.com/jvstin47/Opportunity_Android`,
@@ -520,9 +518,9 @@ A zero-bloat executive cadence system designed to eliminate digital fatigue. Bui
     .distinctUntilChanged()
     .flowOn(Dispatchers.IO)
 }`,
-    '~/projects/opportunity-os/wear_tile.kt': `// Wear OS ProtoLayout Daily Cadence Tile
-fun buildDailyCadenceTile(completed: Int, total: Int): Tile {
-    return Tile.Builder().build()
+    '~/projects/opportunity-os/work_manager.kt': `// Background Sync Worker for Task Cadence
+class SyncTaskWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
+    override suspend fun doWork(): Result = Result.success()
 }`,
     '~/projects/opportunity-os/state_machine.txt': `OFFLINE TASK CADENCE STATE MACHINE:
 PENDING -> IN_PROGRESS -> COMPLETED

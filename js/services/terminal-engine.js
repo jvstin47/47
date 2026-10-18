@@ -323,12 +323,12 @@
               <div style="color:var(--sub);line-height:1.65;">
                 [01] <strong style="color:#2dd4bf;">phoenix-uav</strong> — Autonomous AI Search &amp; Rescue Micro-UAV (SIH 26177)<br/>
                 [02] <strong style="color:#2dd4bf;">camera-tracking</strong> — AI-Based Virtual Camera Tracking System (SIH 26169)<br/>
-                [03] <strong style="color:#2dd4bf;">f1-strategy</strong> — Vectorized race strategy engine with Bellman solver<br/>
+                [03] <strong style="color:#2dd4bf;">f1-strategy</strong> — Vectorized race strategy engine w/ FastF1 telemetry<br/>
                 [04] <strong style="color:#2dd4bf;">captain-lakshmi</strong> — Scroll-driven canvas monograph (3,100+ HD frames)<br/>
                 [05] <strong style="color:#2dd4bf;">chord-analyzer</strong> — MIR desktop app w/ Demucs v4 &amp; BTC Transformer<br/>
                 [06] <strong style="color:#2dd4bf;">aroggyagram</strong> — Autonomous AI community health-triage network<br/>
                 [07] <strong style="color:#2dd4bf;">autometer</strong> — Dual sensor-fusion IoT transit fare meter &amp; UPI engine<br/>
-                [08] <strong style="color:#2dd4bf;">opportunity-os</strong> — Offline-first Android/Wear OS executive planner<br/>
+                [08] <strong style="color:#2dd4bf;">opportunity-os</strong> — Offline-first Android task planner prototype<br/>
                 [09] <strong style="color:#2dd4bf;">crt-lock</strong> — Tactile 3D modular arithmetic safe mechanism (React/WebGL)<br/>
                 [10] <strong style="color:#2dd4bf;">uno-q-arena</strong> — Real-time RL policy @ 60 FPS in Genesis emulation
               </div>`
@@ -340,7 +340,7 @@
             output: `
               <div style="color:var(--nature);font-weight:600;">[AUTONOMOUS UAV] Phoenix X (SIH 26177) Search &amp; Rescue Telemetry:</div>
               <div style="color:var(--sub);line-height:1.65;margin-top:4px;">
-                • Platform: DGCA-Compliant Autonomous Micro-UAV on Qualcomm Robotics RB5<br/>
+                • Platform: Autonomous Micro-UAV Systems Proposal (SIH 2026 Shortlist)<br/>
                 • Problem Statement: SIH 2026 (SIH26177 - NDRF / Disaster Management Track)<br/>
                 • Edge Inference: ThermalNet YOLOv8 @ &lt;18.4ms on-device NPU<br/>
                 • Comms Mesh: 5km LoRa 915 MHz P2P zero-cloud link (offline)<br/>
@@ -357,9 +357,9 @@
               <div style="color:#ff334b;font-weight:600;">[F1 RACE STRATEGY SIMULATOR] Engine State:</div>
               <div style="color:var(--sub);line-height:1.6;margin-top:4px;">
                 • Engine: Vectorized NumPy Monte Carlo (10,000 iterations per compute pass)<br/>
-                • Dynamic Programming: Bellman Equation stochastic backward induction<br/>
-                • Degradation Profiles: Non-linear thermal & graining curves calibrated with FastF1 API<br/>
-                • Live Web: <a href="https://f1-monte-carlo-race-strategy-simula.vercel.app" target="_blank" style="color:#2dd4bf;">f1-monte-carlo-race-strategy-simula.vercel.app ↗</a>
+                • Strategy: Multi-stint tyre degradation and pit window evaluation<br/>
+                • Telemetry: Non-linear tyre curves informed by FastF1 telemetry feeds<br/>
+                • GitHub: <a href="https://github.com/jvstin47/f1-monte-carlo-race-strategy-simulator" target="_blank" style="color:#2dd4bf;">f1-monte-carlo-race-strategy-simulator ↗</a>
               </div>`
           };
 
@@ -383,8 +383,8 @@
             output: `
               <div style="color:var(--sub);line-height:1.65;">
                 • <strong style="color:#e9edea;">Core Systems:</strong> C, C++, Python 3.11, Kotlin, TypeScript, Dart, Linux Shell<br/>
-                • <strong style="color:#e9edea;">AI & Math:</strong> NumPy, PyTorch, Demucs v4, YOLOv8, FastF1, Bellman DP, Monte Carlo<br/>
-                • <strong style="color:#e9edea;">Mobile & Edge:</strong> Jetpack Compose, Room SQLite, Wear OS, Flutter, Qualcomm RB5, Arduino<br/>
+                • <strong style="color:#e9edea;">AI & Math:</strong> NumPy, PyTorch, Demucs v4, YOLOv8, FastF1, Monte Carlo<br/>
+                • <strong style="color:#e9edea;">Mobile & Edge:</strong> Android Native, Room SQLite, Flutter, Qualcomm RB5, Arduino Uno Q<br/>
                 • <strong style="color:#e9edea;">Web & 3D:</strong> React 19, Next.js, Canvas 2D, Three.js, WebGL, Tailwind, FastAPI
               </div>`
           };
@@ -398,6 +398,7 @@
                 🏆 <strong>Phase 1 Winner:</strong> Idea From Industry S2 (MakerHub / BIRAC / MoE)<br/>
                 🥇 <strong>1st Place:</strong> AI Club Ideathon 2026<br/>
                 🎖️ <strong>Shortlisted:</strong> Smart India Hackathon 2026 (SIH 26177 Qualcomm &amp; SIH 26169 Tracks)<br/>
+                🎙️ <strong>Podium (Double 3rd Prize):</strong> Azure 2026 (Extempore English &amp; JamSpace)<br/>
                 🌱 <strong>State Participant:</strong> K-DISC Young Innovators Programme (YIP 8.0), Govt of Kerala<br/>
                 🚀 <strong>Global Participant:</strong> NASA Space Apps Challenge 2025
               </div>`

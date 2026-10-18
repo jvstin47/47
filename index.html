@@ -131,7 +131,7 @@
           Justin Joe<br><span class="line-2">Mathew<span class="cursor"></span></span>
         </h1>
 
-        <p class="hero-role anim anim-3">2nd Year B.Tech CSE @ Amal Jyothi College of Engineering · Full-Stack &amp; Systems Builder</p>
+        <p class="hero-role anim anim-3">2nd Year B.Tech CSE @ Amal Jyothi · Software Engineering, Simulation &amp; Edge Systems</p>
 
         <p class="hero-desc anim anim-4">
           Currently in my <strong>2nd year of B.Tech Computer Science &amp; Engineering at Amal Jyothi College of Engineering (graduating 2029)</strong>. I engineer software across the intersection of <strong>autonomous edge AI, systems architecture, and tactile interactive interfaces</strong>.
@@ -216,22 +216,22 @@
             <span class="deck-project-badge">ROBOTICS &amp; EMBEDDED</span>
             <span class="deck-project-metric">&lt; 20ms INFERENCE</span>
           </div>
-          <h3 class="deck-project-title">Autonomous Search &amp; Rescue Drone</h3>
+          <h3 class="deck-project-title">Autonomous Search &amp; Rescue Drone (SIH 2026 Proposal)</h3>
           <p class="deck-project-desc">
-            Embedded Edge SLM navigation system built for Qualcomm RB5. Executes real-time vision-language target localization and autonomous obstacle avoidance in GPS-denied environments.
+            Disaster-zone autonomous UAV systems proposal and edge architecture. Evaluates dual-compute separation of flight control and edge inference with off-grid LoRa P2P telemetry.
           </p>
           <div class="deck-spec-grid">
             <div class="deck-spec-item">
-              <span class="deck-spec-key">Hardware Compute</span>
-              <span class="deck-spec-val">Qualcomm RB5 + SNPE</span>
+              <span class="deck-spec-key">Hardware Architecture</span>
+              <span class="deck-spec-val">Dual Compute (FC + Edge)</span>
             </div>
             <div class="deck-spec-item">
               <span class="deck-spec-key">Inference Budget</span>
-              <span class="deck-spec-val">&lt; 20ms per frame</span>
+              <span class="deck-spec-val">&lt; 20ms target latency</span>
             </div>
             <div class="deck-spec-item">
-              <span class="deck-spec-key">Framework</span>
-              <span class="deck-spec-val">ROS 2 Humble / PyTorch</span>
+              <span class="deck-spec-key">Communication</span>
+              <span class="deck-spec-val">LoRa 915 MHz P2P Mesh</span>
             </div>
             <div class="deck-spec-item">
               <span class="deck-spec-key">Environment</span>
@@ -239,13 +239,13 @@
             </div>
           </div>
           <div class="deck-tags">
-            <span class="deck-tag">Qualcomm RB5</span>
-            <span class="deck-tag">ROS 2</span>
-            <span class="deck-tag">PyTorch</span>
-            <span class="deck-tag">Edge SLM</span>
+            <span class="deck-tag">Systems Proposal</span>
+            <span class="deck-tag">Arduino Uno Q</span>
+            <span class="deck-tag">LoRa P2P</span>
+            <span class="deck-tag">Edge AI</span>
           </div>
           <a href="#p8" class="deck-link">
-            <span>View SAR Drone Architecture</span>
+            <span>View SAR Drone Proposal</span>
             <svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h10M7 2l4 4-4 4"/></svg>
           </a>
         </div>
@@ -271,7 +271,7 @@
             </div>
             <div class="deck-spec-item">
               <span class="deck-spec-key">Mobile Layer</span>
-              <span class="deck-spec-val">Android Room + Coroutines</span>
+              <span class="deck-spec-val">Android Room DB + StateFlow</span>
             </div>
             <div class="deck-spec-item">
               <span class="deck-spec-key">UI Responsiveness</span>
@@ -486,12 +486,11 @@
       <div class="project-card featured prism-card reveal reveal-d2">
         <div class="prism-card-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-            <p class="project-type">Simulation · Python · FastF1 · Dynamic Programming</p>
-            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(16,185,129,0.15);color:#10b981;">● Live Demo</span>
+            <p class="project-type">Simulation · Python · FastF1 Telemetry · NumPy</p>
           </div>
           <h3 class="project-title chroma-text">F1 Monte Carlo Race Strategy Simulator</h3>
           <p class="project-desc">
-            High-performance Formula 1 race strategy engine powered by a vectorized 10,000-run Monte Carlo simulation, non-linear tyre degradation modeling, and Bellman-equation dynamic programming to compute optimal pit windows against stochastic safety cars and weather shifts.
+            High-performance Formula 1 race strategy engine powered by a vectorized 10,000-iteration Monte Carlo simulation, non-linear tyre degradation modeling, and multi-stint pit window optimization against stochastic safety cars and track wear profiles.
           </p>
           <div class="project-footer">
             <div class="project-tags">
@@ -501,7 +500,6 @@
               <span class="ptag">React Frontend</span>
             </div>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <a href="https://f1-monte-carlo-race-strategy-simula.vercel.app" target="_blank" class="project-link" style="color:var(--nature);">Live App ↗</a>
               <a href="https://github.com/jvstin47/f1-monte-carlo-race-strategy-simulator" target="_blank" class="project-link">GitHub ↗</a>
               <a href="projects.html#p2" class="project-link">Deep dive <span>→</span></a>
             </div>
@@ -633,16 +631,17 @@
       <!-- Opportunity Task Planner -->
       <div class="project-card prism-card reveal reveal-d4">
         <div class="prism-card-inner">
-          <p class="project-type">Mobile Systems · Kotlin · Wear OS</p>
+          <p class="project-type">Mobile Systems · Kotlin · Android Native</p>
           <h3 class="project-title chroma-text">Opportunity — Offline-First Task Ecosystem</h3>
           <p class="project-desc">
-            Deterministic task scoring, capacity-aware schedule allocation, Room DB local storage, WorkManager background jobs, and a synchronized Wear OS companion.
+            Deterministic task scoring, capacity-aware schedule allocation, Room DB local storage, and background WorkManager synchronization.
           </p>
           <div class="project-footer">
             <div class="project-tags">
               <span class="ptag">Kotlin</span>
-              <span class="ptag">Jetpack Compose</span>
-              <span class="ptag">Wear OS</span>
+              <span class="ptag">Android SDK</span>
+              <span class="ptag">Room DB</span>
+              <span class="ptag">WorkManager</span>
             </div>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
               <a href="https://github.com/jvstin47/opportunity-android-task-planner" target="_blank" class="project-link" style="color:var(--nature);">GitHub Repo ↗</a>
@@ -1082,8 +1081,8 @@
 
       <div class="toolkit-card" data-category="sim-ai">
         <div class="toolkit-card-title">Numerical Simulation &amp; Optimization</div>
-        <div class="toolkit-card-list">Python · NumPy · Vectorization · Dynamic Programming · Bellman Solvers</div>
-        <div class="toolkit-card-note">High-throughput Monte Carlo execution, stochastic modeling, and mathematical state optimization.</div>
+        <div class="toolkit-card-list">Python · NumPy · Vectorization · Stochastic Simulation · Strategy Optimization</div>
+        <div class="toolkit-card-note">High-throughput Monte Carlo execution, stochastic modeling, and numerical state evaluation.</div>
       </div>
 
       <div class="toolkit-card" data-category="sim-ai">
@@ -1100,8 +1099,8 @@
 
       <div class="toolkit-card" data-category="mobile-sys">
         <div class="toolkit-card-title">Native Android Systems</div>
-        <div class="toolkit-card-list">Kotlin · Jetpack Compose · Material 3 · Room SQLite · WorkManager · Wear OS</div>
-        <div class="toolkit-card-note">Offline-first architecture, Coroutines/Flow, UDF pattern, and battery-efficient companion tiles.</div>
+        <div class="toolkit-card-list">Kotlin · Room SQLite · WorkManager · Android SDK · Local Persistence</div>
+        <div class="toolkit-card-note">Offline-first architecture, background task synchronization, and local data persistence.</div>
       </div>
 
       <div class="toolkit-card" data-category="mobile-sys">
@@ -1153,14 +1152,14 @@
           <h3 class="timeline-role">Phoenix X — Autonomous AI Search &amp; Rescue (SAR) Micro-UAV</h3>
           <div class="timeline-org">Smart India Hackathon 2026 (PS: SIH26177) · NDRF &amp; Disaster Management Track</div>
           <p class="timeline-desc">
-            Architected and built <strong>Phoenix X</strong>: a DGCA-compliant autonomous Micro-UAV engineered for disaster zones with total communication blackout. Integrated Qualcomm Robotics RB5 edge NPU running ThermalNet YOLOv8 (&lt;20ms inference latency), 5km off-grid LoRa 915 MHz P2P telemetry mesh, and a mission ground station cockpit (<a href="https://phoenix-sar-uav.vercel.app" target="_blank" style="color:var(--nature);">phoenix-sar-uav.vercel.app</a>) to detect trapped survivors within the critical 72-hour golden hour.
+            Authored the systems proposal for <strong>Phoenix X</strong>: an autonomous Micro-UAV concept engineered for disaster zones with total communication blackout. Proposes a dual-compute architecture (separating flight stabilization from edge inference), offline LoRa 915 MHz P2P telemetry, and mission cockpit interface (<a href="https://phoenix-sar-uav.vercel.app" target="_blank" style="color:var(--nature);">phoenix-sar-uav.vercel.app</a>) to detect trapped survivors without cellular networks. Shortlisted for Smart India Hackathon (SIH 2026).
           </p>
           <div class="timeline-tags">
             <span class="timeline-tag">SIH 2026 (SIH26177)</span>
             <span class="timeline-tag">Qualcomm RB5</span>
             <span class="timeline-tag">ThermalNet YOLOv8</span>
             <span class="timeline-tag">LoRa 915 MHz Mesh</span>
-            <span class="timeline-tag">Pixhawk Flight Control</span>
+            <span class="timeline-tag">Systems Proposal</span>
           </div>
         </div>
       </div>
@@ -1171,11 +1170,11 @@
           <h3 class="timeline-role">Autonomous Systems, Vectorized Simulation &amp; Hackathon Championships</h3>
           <div class="timeline-org">Flagship Engineering &amp; Competitive Systems</div>
           <p class="timeline-desc">
-            Architected and shipped the <strong>F1 Monte Carlo Strategy Engine</strong> (10,000 parallel race simulations with Bellman-equation dynamic programming) and <strong>AroggyaGram-3</strong>. Clinched <strong>1st Place at ACM Vibefest Hackathon</strong> (March 2026) and <strong>Victory at AI Club Ideathon</strong> (Feb 2026).
+            Architected and shipped the <strong>F1 Monte Carlo Strategy Engine</strong> (10,000 stochastic race iterations with FastF1 telemetry) and <strong>AroggyaGram-3</strong>. Clinched <strong>1st Place at ACM Vibefest Hackathon</strong> (March 2026) and <strong>Victory at AI Club Ideathon</strong> (Feb 2026).
           </p>
           <div class="timeline-tags">
             <span class="timeline-tag">Python NumPy</span>
-            <span class="timeline-tag">Dynamic Programming</span>
+            <span class="timeline-tag">Stochastic Simulation</span>
             <span class="timeline-tag">Next.js / TypeScript</span>
             <span class="timeline-tag">1st Place Hackathon</span>
           </div>
@@ -1205,10 +1204,10 @@
           <h3 class="timeline-role">Mobile Systems, NASA Space Apps &amp; State Innovation</h3>
           <div class="timeline-org">AutoMeter, Opportunity OS &amp; NASA Global Hackathon</div>
           <p class="timeline-desc">
-            Engineered <strong>AutoMeter</strong> (smart transit fare meter fusing GPS and wheel pulses with instant dynamic UPI QR) and <strong>Opportunity</strong> (offline-first Android &amp; Wear OS task ecosystem). Competed in the global <strong>NASA Space Apps Challenge 2025</strong> and participated in the <strong>K-DISC Young Innovators Programme (YIP 8.0)</strong> under the Government of Kerala.
+            Engineered <strong>AutoMeter</strong> (smart transit fare meter prototype fusing GPS and wheel pulses with instant dynamic UPI QR) and <strong>Opportunity</strong> (offline-first Android task planner prototype). Competed in the global <strong>NASA Space Apps Challenge 2025</strong> and participated in the <strong>K-DISC Young Innovators Programme (YIP 8.0)</strong> under the Government of Kerala.
           </p>
           <div class="timeline-tags">
-            <span class="timeline-tag">Kotlin / Jetpack Compose</span>
+            <span class="timeline-tag">Kotlin / Android</span>
             <span class="timeline-tag">Flutter / Dart</span>
             <span class="timeline-tag">NASA Space Apps</span>
             <span class="timeline-tag">K-DISC YIP 8.0</span>

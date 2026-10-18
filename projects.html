@@ -255,8 +255,8 @@
           <h2 class="proj-title">F1 Monte Carlo<br>Race Strategy Simulator</h2>
         </div>
         <div class="proj-meta">
-          <span class="proj-year">Live System</span>
-          <span class="proj-badge" style="background:rgba(16,185,129,0.15);color:#10b981;"><span class="proj-badge-dot" style="background:#10b981;"></span>Live Demo</span>
+          <span class="proj-year">Open Source</span>
+          <span class="proj-badge" style="background:rgba(16,185,129,0.15);color:#10b981;"><span class="proj-badge-dot" style="background:#10b981;"></span>Python / React</span>
         </div>
       </div>
 
@@ -273,22 +273,22 @@
           </div>
           <div class="field">
             <span class="field-label">Vectorized Engine</span>
-            <p class="field-body">Engineered a vectorized Monte Carlo engine in Python leveraging NumPy arrays to execute 10,000 complete race trajectories in milliseconds. Incorporates non-linear wear profiles calibrated with FastF1 telemetry feeds.</p>
+            <p class="field-body">Engineered a vectorized Monte Carlo engine in Python leveraging NumPy arrays to execute 10,000 complete race trajectories. Incorporates non-linear wear profiles informed by FastF1 telemetry feeds.</p>
           </div>
         </div>
         <div class="proj-col">
           <div class="field">
             <span class="field-label">Decision Optimization</span>
-            <p class="field-body">Coupled stochastic simulation with a dynamic programming solver based on the Bellman equation to find the globally optimal pit strategy (lap count, compound choice, safety car response) under uncertain weather states.</p>
+            <p class="field-body">Coupled stochastic simulation with strategy optimization algorithms to evaluate optimal pit strategy windows (lap count, compound choice, safety car response) under uncertain track conditions.</p>
           </div>
           <div class="field">
             <span class="field-label">Stack &amp; Performance</span>
-            <p class="field-body">Python backend leveraging vectorized linear algebra, FastAPI compute endpoints, and a high-framerate interactive React front-end delivering live probability curves and telemetry graphs.</p>
+            <p class="field-body">Python backend leveraging vectorized linear algebra, and an interactive React front-end delivering strategy curves and telemetry graphs.</p>
             <div class="tags">
               <span class="tag">Python</span>
               <span class="tag">NumPy</span>
               <span class="tag">FastF1 API</span>
-              <span class="tag">Dynamic Programming</span>
+              <span class="tag">Strategy Optimization</span>
               <span class="tag">React</span>
               <span class="tag">Monte Carlo</span>
             </div>
@@ -298,7 +298,7 @@
           <div class="field">
             <span class="field-label">Outcome</span>
             <div class="outcome-big">10k+</div>
-            <p class="field-body">Vectorized simulations per compute pass. Deployed and live for interactive user experimentation with real historical Grand Prix telemetry datasets.</p>
+            <p class="field-body">Vectorized simulations per compute pass. Open source repository with reproducible simulation runs against historical Grand Prix telemetry datasets.</p>
           </div>
           <div class="field">
             <span class="field-label">Reflection</span>
@@ -310,7 +310,6 @@
       <div class="proj-footer">
         <span class="repo-label">Interactive deployment &amp; code</span>
         <div style="display:flex;gap:16px;">
-          <a href="https://f1-monte-carlo-race-strategy-simula.vercel.app" target="_blank" class="repo-link" style="color:var(--nature);">Launch Live Simulator <span class="arr">↗</span></a>
           <a href="https://github.com/jvstin47/f1-monte-carlo-race-strategy-simulator" target="_blank" class="repo-link">View Repository <span class="arr">↗</span></a>
         </div>
       </div>
@@ -414,17 +413,16 @@
         </div>
         <div class="proj-col">
           <div class="field">
-            <span class="field-label">Modern Android Stack</span>
-            <p class="field-body">Crafted in pure Kotlin using Jetpack Compose, Material 3 theming, Room SQLite Database for offline persistence, WorkManager for reliable background alarms, and an accompanying Wear OS companion tile.</p>
+            <span class="field-label">Native Android Stack</span>
+            <p class="field-body">Crafted in pure Kotlin using Android Native SDK, Room SQLite Database for offline persistence, and WorkManager for reliable background alarms.</p>
           </div>
           <div class="field">
             <span class="field-label">Architecture</span>
-            <p class="field-body">Strict Unidirectional Data Flow (UDF) with Coroutines and StateFlow. Fully decoupled data access layers guaranteeing zero UI thread stutters and 60 FPS transitions.</p>
+            <p class="field-body">Strict Unidirectional Data Flow (UDF) with clean domain separation. Fully decoupled data access layers guaranteeing responsive offline UI rendering.</p>
             <div class="tags">
               <span class="tag">Kotlin</span>
-              <span class="tag">Jetpack Compose</span>
+              <span class="tag">Android SDK</span>
               <span class="tag">Room DB</span>
-              <span class="tag">Wear OS</span>
               <span class="tag">WorkManager</span>
               <span class="tag">UDF Architecture</span>
             </div>
@@ -434,7 +432,7 @@
           <div class="field">
             <span class="field-label">Outcome</span>
             <div class="outcome-big">100%</div>
-            <p class="field-body">Zero cloud dependency. Complete local privacy, instant sub-millisecond query responses, and resilient cross-device synchronization to Wear OS watches.</p>
+            <p class="field-body">Zero cloud dependency. Complete local privacy, instant query responses, and resilient background task execution.</p>
           </div>
           <div class="field">
             <span class="field-label">Reflection</span>
