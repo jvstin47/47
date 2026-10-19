@@ -346,7 +346,7 @@
                 • Comms Mesh: 5km LoRa 915 MHz P2P zero-cloud link (offline)<br/>
                 • Live Cockpit: <a href="https://phoenix-sar-uav.vercel.app" target="_blank" style="color:var(--nature);">phoenix-sar-uav.vercel.app ↗</a><br/>
                 • GitHub Repo: <a href="https://github.com/jvstin47/Phoenix-SIH26177-SAR-UAV" target="_blank" style="color:var(--nature);">Phoenix-SIH26177-SAR-UAV ↗</a><br/>
-                • Companion Project: <a href="https://github.com/jvstin47/Phoenix-X-AI-Based-Virtual-Camera-Tracking-System-SIH26169" target="_blank" style="color:var(--nature);">Virtual Camera Tracking (SIH 26169) ↗</a>
+                • Companion Project: <a href="https://github.com/jvstin47/SIH-26169-Virtual-Camera-Tracking" target="_blank" style="color:var(--nature);">Virtual Camera Tracking (SIH 26169) ↗</a>
               </div>`
           };
 

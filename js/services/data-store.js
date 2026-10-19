@@ -57,10 +57,10 @@
     {
       id: '02',
       slug: 'camera-tracking',
-      title: 'Phoenix-X — AI-Based Virtual Camera Tracking',
+      title: 'AI-Based Virtual Camera Tracking (SIH 26169)',
       category: 'Spatial Computing / Broadcast',
       sihTrack: 'SIH 26169 (Optical Tracking)',
-      repoUrl: 'https://github.com/jvstin47/Phoenix-X-AI-Based-Virtual-Camera-Tracking-System-SIH26169',
+      repoUrl: 'https://github.com/jvstin47/SIH-26169-Virtual-Camera-Tracking',
       summary: 'Markerless 6-DoF optical pose estimation fused with 500Hz IMU kinematics via Extended Kalman Filtering for real-time FreeD UDP virtual studio broadcast.'
     },
     {
@@ -236,12 +236,12 @@ STATUS: PASS — Zero frame drops across 60-minute continuous mission flight.`,
 • Battery: 4S 3300mAh LiPo (24-minute endurance @ full payload)`,
 
     /* 02. CAMERA-TRACKING */
-    '~/projects/camera-tracking/README.md': `# Phoenix-X — AI-Based Virtual Camera Tracking System
+    '~/projects/camera-tracking/README.md': `# AI-Based Virtual Camera Tracking System (SIH 26169)
 
 **Smart India Hackathon 2026 (SIH 26169)** · Virtual Cinematography & Optical Spatial Tracking
 
 ## Executive Overview
-High-end virtual production traditionally mandates multimillion-dollar infrared optical marker rigs (e.g. Vicon, OptiTrack) and cumbersome sensor collars. Phoenix-X is a markerless 6-DoF spatial camera tracking and optical pose estimation architecture built for real-time LED volume virtual studios and live VFX broadcasts.
+High-end virtual production traditionally mandates multimillion-dollar infrared optical marker rigs (e.g. Vicon, OptiTrack) and cumbersome sensor collars. This system is a markerless 6-DoF spatial camera tracking and optical pose estimation architecture built for real-time LED volume virtual studios and live VFX broadcasts.
 
 ## Technical Highlights
 1. **6-DoF Real-Time Pose Estimation:**
@@ -253,7 +253,7 @@ High-end virtual production traditionally mandates multimillion-dollar infrared 
    - Zero-latency lens distortion calibration and camera intrinsics solver.
 
 ## Repository
-• GitHub: https://github.com/jvstin47/Phoenix-X-AI-Based-Virtual-Camera-Tracking-System-SIH26169`,
+• GitHub: https://github.com/jvstin47/SIH-26169-Virtual-Camera-Tracking`,
     '~/projects/camera-tracking/tracking_pipeline.py': `import cv2, numpy as np
 
 class OpticalPoseEstimator:
@@ -284,7 +284,7 @@ class PoseEKF:
         residual = optical_pose - self.state[:6]
         self.state[:6] += 0.45 * residual
         return self.state`,
-    '~/projects/camera-tracking/repo.url': 'https://github.com/jvstin47/Phoenix-X-AI-Based-Virtual-Camera-Tracking-System-SIH26169',
+    '~/projects/camera-tracking/repo.url': 'https://github.com/jvstin47/SIH-26169-Virtual-Camera-Tracking',
     '~/projects/camera-tracking/freed_protocol.txt': `FreeD UDP BROADCAST PACKET STRUCTURE (29 Bytes):
 Byte 0: Message Type (0xD1 for Camera Position)
 Byte 1: Camera ID (0x01)
