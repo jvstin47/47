@@ -108,7 +108,7 @@
       slug: 'opportunity-os',
       title: 'Opportunity OS — Task Architecture Prototype',
       category: 'Mobile / Android Native',
-      repoUrl: 'https://github.com/jvstin47/Opportunity_Android',
+      repoUrl: 'https://github.com/jvstin47/opportunity-android-task-planner',
       summary: 'Offline-first task planner prototype engineered with Kotlin, Room SQLite, and WorkManager background synchronization.'
     },
     {
@@ -124,7 +124,7 @@
       slug: 'uno-q-arena',
       title: 'UNO-Q Arena — Real-Time Retro RL Engine',
       category: 'Reinforcement Learning / Embedded',
-      repoUrl: 'https://github.com/jvstin47/UNO-Q_Arena',
+      repoUrl: 'https://github.com/jvstin47/UNO-Q-Arena-Edge-AI-Retro-Gaming-on-Arduino-UNO-Q',
       summary: 'Embedded deep RL policy hooked into a Sega Genesis emulator execution loop running at 60 FPS on micro-hardware.'
     }
   ];
@@ -512,7 +512,7 @@ Designed to modernize informal transit networks (auto-rickshaws, shared taxis) w
 A clean task prioritization architecture prototype designed for focus. Built with Kotlin, Room SQLite database, and WorkManager background task execution, ensuring responsive local performance completely offline.
 
 ## Repository
-• GitHub: https://github.com/jvstin47/Opportunity_Android`,
+• GitHub: https://github.com/jvstin47/opportunity-android-task-planner`,
     '~/projects/opportunity-os/task_engine.kt': `class TaskSyncEngine(private val taskDao: TaskDao) {
   val activeCadenceFlow: Flow<List<TaskEntity>> = taskDao.observeActiveTasks()
     .distinctUntilChanged()
@@ -578,7 +578,7 @@ has a unique solution modulo N = n_1 * n_2 * ... * n_k.`,
 Integrates a deep reinforcement learning policy into a Sega Genesis emulator loop executing on embedded micro-hardware. Achieves 60 FPS frame capture and input prediction under severe RAM constraints.
 
 ## Repository
-• GitHub: https://github.com/jvstin47/UNO-Q_Arena`,
+• GitHub: https://github.com/jvstin47/UNO-Q-Arena-Edge-AI-Retro-Gaming-on-Arduino-UNO-Q`,
     '~/projects/uno-q-arena/rl_policy.py': `import torch
 
 class RetroGamepadPolicy(torch.nn.Module):
