@@ -116,7 +116,7 @@
       slug: 'crt-lock',
       title: 'Chinese Remainder Theorem Modular Safe',
       category: 'Applied Cryptography / 3D WebGL',
-      liveUrl: 'https://crt-modular-lock.vercel.app',
+      liveUrl: 'https://crt-chinese-reminder-theorem.vercel.app',
       summary: 'Tactile 3D safe tumbler mechanism demonstrating number theory and systems of linear congruences in real time with Three.js shaders.'
     },
     {
@@ -536,7 +536,7 @@ PENDING -> IN_PROGRESS -> COMPLETED
 A tactile browser experience turning abstract number theory into a physical interactive safe tumbler mechanism. Solves systems of modular congruences using the Chinese Remainder Theorem in real-time, rendered with custom Three.js metallic shaders at 60 FPS.
 
 ## Live Application
-• Web Demo: https://crt-modular-lock.vercel.app`,
+• Web Demo: https://crt-chinese-reminder-theorem.vercel.app`,
     '~/projects/crt-lock/crt_solver.ts': `export function solveCRT(remainders: number[], moduli: number[]): number {
   const prod = moduli.reduce((acc, val) => acc * val, 1);
   let result = 0;
