@@ -68,6 +68,7 @@
       if (this.themeBtn) {
         this.themeBtn.textContent = isLight ? '☀' : '☾';
         this.themeBtn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+        this.themeBtn.setAttribute('title', isLight ? 'Switch to Dark Mode (Hotkey: L)' : 'Switch to Light Mode (Hotkey: L)');
       }
 
       if (persist) {
@@ -85,7 +86,14 @@
     toggle() {
       const isLight = document.body.classList.contains('light');
       const nextTheme = isLight ? 'dark' : 'light';
-      this.apply(nextTheme, true);
+
+      if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.startViewTransition(() => {
+          this.apply(nextTheme, true);
+        });
+      } else {
+        this.apply(nextTheme, true);
+      }
     }
   }
 

@@ -17,7 +17,8 @@
       'PhotoDeckView',
       'PrismView',
       'CertModal',
-      'TechTerminal'
+      'TechTerminal',
+      'CommandMenu'
     ], factory);
   } else if (typeof module === 'object' && module.exports) {
     module.exports = factory(
@@ -32,7 +33,8 @@
       require('./components/photo-deck-view'),
       require('./components/prism-view'),
       require('./components/cert-modal'),
-      require('./components/tech-terminal')
+      require('./components/tech-terminal'),
+      require('./components/command-menu')
     );
   } else {
     root.Portfolio = factory(
@@ -47,7 +49,8 @@
       root.PhotoDeckView,
       root.PrismView,
       root.CertModal,
-      root.TechTerminal
+      root.TechTerminal,
+      root.CommandMenu
     );
   }
 })(typeof self !== 'undefined' ? self : this, function (
@@ -62,7 +65,8 @@
   PhotoDeckView,
   PrismView,
   CertModal,
-  TechTerminal
+  TechTerminal,
+  CommandMenu
 ) {
   'use strict';
 
@@ -80,6 +84,7 @@
       this.prismView = null;
       this.certModal = null;
       this.techTerminal = null;
+      this.commandMenu = null;
 
       this.isInitialized = false;
     }
@@ -122,6 +127,16 @@
           });
         }
 
+        if (CommandMenu) {
+          this.commandMenu = new CommandMenu({
+            store: this.store,
+            dataStore: this.dataStore
+          });
+        }
+
+        // Enable zero-latency hover prefetching
+        this.setupPrefetching();
+
         this.isInitialized = true;
 
         if (this.config && this.config.DEBUG) {
@@ -134,6 +149,29 @@
           console.error('[PortfolioApp] Initialization error:', err);
         }
       }
+    }
+
+    setupPrefetching() {
+      if (typeof document === 'undefined') return;
+      const prefetched = new Set();
+      const prefetch = (url) => {
+        if (!url || prefetched.has(url) || url.startsWith('http') || url.startsWith('#') || url.startsWith('mailto:') || url.startsWith('javascript:')) return;
+        prefetched.add(url);
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = url;
+        document.head.appendChild(link);
+      };
+
+      document.addEventListener('mouseover', (e) => {
+        const a = e.target.closest('a');
+        if (a && a.getAttribute('href')) prefetch(a.getAttribute('href'));
+      }, { passive: true });
+
+      document.addEventListener('touchstart', (e) => {
+        const a = e.target.closest('a');
+        if (a && a.getAttribute('href')) prefetch(a.getAttribute('href'));
+      }, { passive: true });
     }
   }
 

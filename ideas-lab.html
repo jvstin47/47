@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Ideas Lab — Justin Mathew</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -36,8 +36,11 @@
       <li><a href="ideas-lab.html" class="active">Ideas Lab</a></li>
       <li><a href="Justin_Mathew_Resume.pdf" target="_blank" style="color:var(--nature);">Resume ↗</a></li>
     </ul>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <button id="theme-btn" onclick="toggleTheme()" title="Toggle theme">☾</button>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <button id="cmd-menu-btn" class="cmd-trigger-btn" aria-label="Open Command Menu (Cmd+K)" title="Command Menu (⌘K or /)">
+        <span class="cmd-k-icon">⌘K</span>
+      </button>
+      <button id="theme-btn" onclick="toggleTheme()" title="Toggle theme (Hotkey: L)">☾</button>
       <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">☰</button>
     </div>
   </div>
@@ -307,6 +310,7 @@
 <script src="js/components/prism-view.js"></script>
 <script src="js/components/cert-modal.js"></script>
 <script src="js/components/tech-terminal.js"></script>
+<script src="js/components/command-menu.js"></script>
 <script src="js/app.js"></script>
 <script src="interactive-trends.js?v=20261010b"></script>
 </body>
