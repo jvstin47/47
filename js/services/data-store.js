@@ -27,7 +27,7 @@
   };
 
   const SKILLS = {
-    coreSystems: ['C', 'C++', 'Python 3.11', 'Kotlin', 'TypeScript', 'Dart', 'Linux Shell'],
+    coreSystems: ['C', 'C++', 'Java', 'Python 3.11', 'Kotlin', 'TypeScript', 'Dart', 'Linux Shell'],
     aiAndMath: ['NumPy', 'PyTorch', 'Demucs v4', 'YOLOv8', 'FastF1', 'Monte Carlo Simulation'],
     mobileAndEdge: ['Android Native', 'Room SQLite', 'Flutter', 'Qualcomm RB5', 'Arduino Uno Q'],
     webAnd3D: ['React 19', 'Next.js', 'Canvas 2D', 'Three.js', 'WebGL', 'Tailwind', 'FastAPI']
@@ -68,7 +68,7 @@
       slug: 'f1-strategy',
       title: 'F1 Monte Carlo Race Strategy Simulator',
       category: 'Stochastic Simulation / Strategy',
-      repoUrl: 'https://github.com/jvstin47/F1-Monte-Carlo-Race-Strategy-Simulator',
+      repoUrl: 'https://github.com/jvstin47/f1-monte-carlo-race-strategy-simulator',
       summary: '10,000-iteration vectorized NumPy Monte Carlo race simulator paired with multi-stint pit strategy optimization.'
     },
     {
@@ -316,7 +316,7 @@ In Formula 1, race victories are determined by navigating thousands of stochasti
    - High-performance data pipelines and interactive probability visualizations.
 
 ## Repository
-• GitHub: https://github.com/jvstin47/F1-Monte-Carlo-Race-Strategy-Simulator`,
+• GitHub: https://github.com/jvstin47/f1-monte-carlo-race-strategy-simulator`,
     '~/projects/f1-strategy/strategy_solver.py': `import numpy as np
 
 def solve_optimal_pit_window(total_laps=57, tyre_compounds=["Soft", "Medium", "Hard"]):
