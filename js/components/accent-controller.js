@@ -61,18 +61,50 @@
     };
   }
 
+  function relativeLuminance(rgb) {
+    const toLin = (c) => {
+      const s = c / 255;
+      return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * toLin(rgb.r) + 0.7152 * toLin(rgb.g) + 0.0722 * toLin(rgb.b);
+  }
+
+  function ensureLightModeContrast(rgb) {
+    // Target relative luminance <= 0.17 for >= 4.5:1 WCAG AA contrast on #f7faf8 / #ffffff
+    let current = { ...rgb };
+    const black = { r: 0, g: 0, b: 0 };
+    let step = 0;
+    while (relativeLuminance(current) > 0.165 && step < 24) {
+      current = mixRgb(current, black, 0.12);
+      step++;
+    }
+    return current;
+  }
+
+  function ensureDarkModeContrast(rgb) {
+    // Lift overly dark custom colors so they remain legible on #030705 / #08120c
+    let current = { ...rgb };
+    const white = { r: 255, g: 255, b: 255 };
+    let step = 0;
+    while (relativeLuminance(current) < 0.14 && step < 20) {
+      current = mixRgb(current, white, 0.12);
+      step++;
+    }
+    return current;
+  }
+
   function derivePalette(hex, isLight) {
     const base = hexToRgb(hex);
     const white = { r: 255, g: 255, b: 255 };
     const black = { r: 0, g: 0, b: 0 };
 
     if (isLight) {
-      // Darken slightly in light mode for crisp WCAG contrast
-      const primary = mixRgb(base, black, 0.25);
-      const hi = mixRgb(base, black, 0.38);
-      const dim = mixRgb(base, black, 0.55);
-      const glacier = mixRgb(base, { r: 15, g: 118, b: 110 }, 0.2);
-      const sprout = mixRgb(base, black, 0.15);
+      // Luminance-calibrated darkening in light mode for crisp WCAG AA/AAA contrast
+      const primary = ensureLightModeContrast(mixRgb(base, black, 0.18));
+      const hi = mixRgb(primary, black, 0.22);
+      const dim = mixRgb(primary, black, 0.42);
+      const glacier = ensureLightModeContrast(mixRgb(base, { r: 15, g: 118, b: 110 }, 0.2));
+      const sprout = ensureLightModeContrast(mixRgb(base, black, 0.12));
 
       return {
         hex: normalizeHex(hex),
@@ -91,24 +123,25 @@
     }
 
     // Dark mode: vibrant primary, luminous hover, deep shadow
-    const hi = mixRgb(base, white, 0.30);
-    const dim = mixRgb(base, black, 0.42);
-    const glacier = mixRgb(base, { r: 200, g: 255, b: 245 }, 0.24);
-    const sprout = mixRgb(base, white, 0.22);
+    const primary = ensureDarkModeContrast(base);
+    const hi = mixRgb(primary, white, 0.30);
+    const dim = mixRgb(primary, black, 0.42);
+    const glacier = mixRgb(primary, { r: 200, g: 255, b: 245 }, 0.24);
+    const sprout = mixRgb(primary, white, 0.22);
 
     return {
       hex: normalizeHex(hex),
-      primaryHex: normalizeHex(hex),
+      primaryHex: rgbToHex(primary.r, primary.g, primary.b),
       hiHex: rgbToHex(hi.r, hi.g, hi.b),
       dimHex: rgbToHex(dim.r, dim.g, dim.b),
       glacierHex: rgbToHex(glacier.r, glacier.g, glacier.b),
       sproutHex: rgbToHex(sprout.r, sprout.g, sprout.b),
-      accentRgb: `${base.r}, ${base.g}, ${base.b}`,
+      accentRgb: `${Math.round(primary.r)}, ${Math.round(primary.g)}, ${Math.round(primary.b)}`,
       hiRgb: `${Math.round(hi.r)}, ${Math.round(hi.g)}, ${Math.round(hi.b)}`,
       dimRgb: `${Math.round(dim.r)}, ${Math.round(dim.g)}, ${Math.round(dim.b)}`,
       glacierRgb: `${Math.round(glacier.r)}, ${Math.round(glacier.g)}, ${Math.round(glacier.b)}`,
       sproutRgb: `${Math.round(sprout.r)}, ${Math.round(sprout.g)}, ${Math.round(sprout.b)}`,
-      glow: `rgba(${base.r}, ${base.g}, ${base.b}, 0.16)`
+      glow: `rgba(${Math.round(primary.r)}, ${Math.round(primary.g)}, ${Math.round(primary.b)}, 0.16)`
     };
   }
 
@@ -176,22 +209,27 @@
     }
 
     setCssTokens(rootEl, p) {
-      rootEl.style.setProperty('--nature', p.primaryHex);
-      rootEl.style.setProperty('--nature-hi', p.hiHex);
-      rootEl.style.setProperty('--nature-dim', p.dimHex);
-      rootEl.style.setProperty('--nature-glow', p.glow);
-      rootEl.style.setProperty('--glacier', p.glacierHex);
-      rootEl.style.setProperty('--sprout', p.sproutHex);
-      rootEl.style.setProperty('--accent-rgb', p.accentRgb);
-      rootEl.style.setProperty('--accent-hi-rgb', p.hiRgb);
-      rootEl.style.setProperty('--accent-dim-rgb', p.dimRgb);
-      rootEl.style.setProperty('--glacier-rgb', p.glacierRgb);
-      rootEl.style.setProperty('--sprout-rgb', p.sproutRgb);
-      rootEl.style.setProperty('--gold', p.primaryHex);
-      rootEl.style.setProperty('--gold-hi', p.hiHex);
-      rootEl.style.setProperty('--gold-dim', p.dimHex);
-      rootEl.style.setProperty('--gold-glow', p.glow);
-      rootEl.style.setProperty('--building', p.primaryHex);
+      const targets = [rootEl];
+      if (document.body) targets.push(document.body);
+
+      targets.forEach(el => {
+        el.style.setProperty('--nature', p.primaryHex);
+        el.style.setProperty('--nature-hi', p.hiHex);
+        el.style.setProperty('--nature-dim', p.dimHex);
+        el.style.setProperty('--nature-glow', p.glow);
+        el.style.setProperty('--glacier', p.glacierHex);
+        el.style.setProperty('--sprout', p.sproutHex);
+        el.style.setProperty('--accent-rgb', p.accentRgb);
+        el.style.setProperty('--accent-hi-rgb', p.hiRgb);
+        el.style.setProperty('--accent-dim-rgb', p.dimRgb);
+        el.style.setProperty('--glacier-rgb', p.glacierRgb);
+        el.style.setProperty('--sprout-rgb', p.sproutRgb);
+        el.style.setProperty('--gold', p.primaryHex);
+        el.style.setProperty('--gold-hi', p.hiHex);
+        el.style.setProperty('--gold-dim', p.dimHex);
+        el.style.setProperty('--gold-glow', p.glow);
+        el.style.setProperty('--building', p.primaryHex);
+      });
     }
 
     observeThemeChanges() {

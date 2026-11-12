@@ -68,8 +68,7 @@
 /* ──────────────────────────────────────────────────────────────
    DESIGN TOKENS — LIGHT MODE (High-Contrast Alpine Alabaster & Forest Ink)
 ────────────────────────────────────────────────────────────── */
-html.light,
-body.light {
+html.light {
   /* Backgrounds: Pristine Light Canvas with Crisp White Surfaces */
   --bg:          #f7faf8;              /* Clean, crisp, luminous background */
   --surface:     #ffffff;              /* True crisp white cards for maximum contrast */

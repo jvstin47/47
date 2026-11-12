@@ -79,7 +79,7 @@ body.light .hero-eyebrow-text {
   flex: 1;
   max-width: 120px;
   height: 1.5px;
-  background: rgba(16, 185, 129, 0.45);
+  background: rgba(var(--accent-rgb), 0.45);
 }
 
 body.light .hero-role {
@@ -88,7 +88,7 @@ body.light .hero-role {
 }
 
 body.light .hero-role::after {
-  background: #047857;
+  background: var(--nature-dim);
   height: 1.5px;
 }
 
@@ -104,7 +104,7 @@ body.light .hero-role::after {
 .hero-desc strong {
   color: #ffffff;
   font-weight: 700;
-  text-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
+  text-shadow: 0 0 16px rgba(var(--accent-rgb), 0.25);
 }
 
 body.light .hero-desc {
@@ -195,7 +195,7 @@ body.light .hero-desc strong {
   background: #0d1a10;
   width: var(--w-card);
   height: var(--h-card);
-  border: 1.5px solid rgba(16, 185, 129, 0.35);
+  border: 1.5px solid rgba(var(--accent-rgb), 0.35);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.2);
   cursor: pointer;
   transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -211,7 +211,7 @@ body.light .hero-desc strong {
 body.light .photo-deck-card {
   background: #f0fdf4;
   border-color: rgba(5, 150, 105, 0.45);
-  box-shadow: 0 10px 24px rgba(4, 120, 87, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 24px rgba(var(--accent-dim-rgb), 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.8);
 }
 
 .photo-deck-wrap:hover .photo-deck-card {
@@ -219,13 +219,13 @@ body.light .photo-deck-card {
 }
 
 .photo-deck-card:hover {
-  border-color: #34d399;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(16, 185, 129, 0.35);
+  border-color: var(--nature-hi);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(var(--accent-rgb), 0.35);
 }
 
 body.light .photo-deck-card:hover {
   border-color: #059669;
-  box-shadow: 0 14px 30px rgba(4, 120, 87, 0.25);
+  box-shadow: 0 14px 30px rgba(var(--accent-dim-rgb), 0.25);
 }
 
 .photo-deck-card:nth-child(1) {
@@ -348,7 +348,7 @@ body.light .photo-deck-card:hover {
   filter: blur(4px);
   width: 75%;
   height: 4px;
-  background: linear-gradient(to right, transparent, #10b981, transparent);
+  background: linear-gradient(to right, transparent, var(--nature), transparent);
 }
 
 .photo-deck-line:nth-child(1)::after {
@@ -356,7 +356,7 @@ body.light .photo-deck-card:hover {
   position: absolute;
   width: 55%;
   height: 1.5px;
-  background: linear-gradient(to right, transparent, #34d399, transparent);
+  background: linear-gradient(to right, transparent, var(--nature-hi), transparent);
 }
 
 body.light .photo-deck-line:nth-child(1)::before {
@@ -364,7 +364,7 @@ body.light .photo-deck-line:nth-child(1)::before {
 }
 
 body.light .photo-deck-line:nth-child(1)::after {
-  background: linear-gradient(to right, transparent, #10b981, transparent);
+  background: linear-gradient(to right, transparent, var(--nature), transparent);
 }
 
 .photo-deck-controls {
@@ -385,7 +385,7 @@ body.light .photo-deck-line:nth-child(1)::after {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 1px solid rgba(16, 185, 129, 0.4);
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
   background: transparent;
   cursor: pointer;
   padding: 0;
@@ -403,8 +403,8 @@ body.light .photo-dot {
 }
 
 body.light .photo-dot.active {
-  background: #047857;
-  box-shadow: 0 0 6px #047857;
+  background: var(--nature-dim);
+  box-shadow: 0 0 6px var(--nature-dim);
 }
 
 .photo-deck-hint {
@@ -416,7 +416,7 @@ body.light .photo-dot.active {
 }
 
 body.light .photo-deck-hint {
-  color: #047857;
+  color: var(--nature-dim);
 }
 
 .about-meta {
@@ -521,7 +521,7 @@ body.light .photo-deck-hint {
 
 .project-card.featured:not(.prism-card) {
   background: var(--surface-2);
-  border-color: rgba(16, 185, 129, 0.35);
+  border-color: rgba(var(--accent-rgb), 0.35);
 }
 
 .project-type {
@@ -584,8 +584,8 @@ body.light .photo-deck-hint {
 
 .project-link {
   color: var(--gold);
-  background: rgba(45, 212, 191, 0.08);
-  border: 1px solid rgba(45, 212, 191, 0.28);
+  background: rgba(var(--glacier-rgb), 0.08);
+  border: 1px solid rgba(var(--glacier-rgb), 0.28);
   padding: 6px 12px;
   border-radius: 3px;
   font-size: 11px;
@@ -604,11 +604,11 @@ body.light .photo-deck-hint {
 }
 
 .project-link:hover {
-  background: rgba(45, 212, 191, 0.18);
+  background: rgba(var(--glacier-rgb), 0.18);
   border-color: var(--gold);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(45, 212, 191, 0.2);
+  box-shadow: 0 4px 12px rgba(var(--glacier-rgb), 0.2);
 }
 
 /* ── ACHIEVEMENTS SECTION ── */
@@ -706,9 +706,9 @@ body.light .photo-deck-hint {
 }
 
 .achieve-badge.gold {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(var(--accent-rgb), 0.12);
   color: var(--gold);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
 }
 
 .achieve-badge.green {
@@ -1241,7 +1241,7 @@ body.light .photo-deck-hint {
   gap: 6px;
   padding: 16px 18px;
   background: rgba(8, 20, 13, 0.92);
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
   border-radius: var(--radius);
   box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.6);
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
@@ -1249,7 +1249,7 @@ body.light .photo-deck-hint {
 .proof-card:hover {
   border-color: var(--nature);
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(16, 185, 129, 0.18);
+  box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(var(--accent-rgb), 0.18);
 }
 .proof-stat {
   font-family: var(--font-display);
@@ -1272,7 +1272,7 @@ body.light .proof-card {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 body.light .proof-stat {
-  color: #047857;
+  color: var(--nature-dim);
   font-weight: 700;
 }
 body.light .proof-label {
