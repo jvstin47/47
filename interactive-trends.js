@@ -238,6 +238,9 @@
       uniform float u_time;
       uniform float u_isLight;
       uniform float u_intensity;
+      uniform vec3 u_accent;
+      uniform vec3 u_accentHi;
+      uniform vec3 u_accentDim;
 
       vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
       vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -278,24 +281,21 @@
         float n2 = snoise(p * 1.25 - vec2(t * 0.4, -t * 0.6) + vec2(n1 * 0.5));
         float n3 = snoise(p * 2.0 + vec2(n2 * 0.7, t * 0.8));
 
-        vec3 colVoidDark = vec3(0.012, 0.027, 0.020);   // #030705 Midnight Pine Void
-        vec3 colPine     = vec3(0.016, 0.298, 0.216);   // #047857 Deep Forest
-        vec3 colEmerald  = vec3(0.063, 0.725, 0.506);   // #10b981 Vivid Emerald Silk
-        vec3 colGlacier  = vec3(0.176, 0.831, 0.749);   // #2dd4bf Mountain Glacier
-        vec3 colSprout   = vec3(0.290, 0.871, 0.502);   // #4ade80 Sprout Aurora
+        vec3 colVoidDark = vec3(0.012, 0.020, 0.018);   // Deep Midnight Void
+        vec3 colPine     = u_accentDim;                 // Deep Accent
+        vec3 colEmerald  = u_accent;                    // Primary Accent Silk
+        vec3 colGlacier  = mix(u_accent, u_accentHi, 0.55);
+        vec3 colSprout   = u_accentHi;                  // Highlight Aurora
 
-        vec3 colLightBg  = vec3(0.969, 0.980, 0.973);   // #f7faf8 Crisp Alabaster
-        vec3 colLightDew = vec3(0.820, 0.980, 0.898);   // #d1fae5 Morning Dew
-        vec3 colLightSage= vec3(0.902, 0.965, 0.925);   // #e6f6ec Soft Jade
-        vec3 colLightEm  = vec3(0.016, 0.471, 0.341);   // #047857 Forest Emerald
+        vec3 colLightDew = mix(vec3(0.969, 0.980, 0.973), u_accentHi, 0.22);
 
         vec3 finalColor;
         float alpha;
 
         if (u_isLight > 0.5) {
-          vec3 colMint     = vec3(0.537, 0.925, 0.745); // #89ecc0 fresh luminous mint
-          vec3 colJade     = vec3(0.200, 0.780, 0.580); // #33c794 vibrant botanical jade
-          vec3 colDeepPine = vec3(0.016, 0.380, 0.250); // #046140 deep pine accent
+          vec3 colMint     = mix(vec3(0.95), u_accentHi, 0.45);
+          vec3 colJade     = mix(vec3(0.90), u_accent, 0.65);
+          vec3 colDeepPine = u_accentDim;
           vec3 blend1 = mix(colLightDew, colMint, smoothstep(-0.6, 0.5, n1));
           vec3 blend2 = mix(blend1, colJade, smoothstep(-0.3, 0.7, n2));
           finalColor = mix(blend2, colDeepPine, clamp(n3 * 0.28, 0.0, 0.35));
@@ -359,6 +359,29 @@
       const uTime = gl.getUniformLocation(program, 'u_time');
       const uLight = gl.getUniformLocation(program, 'u_isLight');
       const uInt = gl.getUniformLocation(program, 'u_intensity');
+      const uAccent = gl.getUniformLocation(program, 'u_accent');
+      const uAccentHi = gl.getUniformLocation(program, 'u_accentHi');
+      const uAccentDim = gl.getUniformLocation(program, 'u_accentDim');
+
+      function parseCssRgb(varName, fallback) {
+        const raw = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+        if (!raw) return fallback;
+        const parts = raw.split(',').map(n => parseFloat(n.trim()) / 255);
+        return parts.length === 3 && !parts.some(isNaN) ? parts : fallback;
+      }
+
+      let cachedAccent = parseCssRgb('--accent-rgb', [0.063, 0.725, 0.506]);
+      let cachedAccentHi = parseCssRgb('--accent-hi-rgb', [0.204, 0.827, 0.600]);
+      let cachedAccentDim = parseCssRgb('--accent-dim-rgb', [0.016, 0.471, 0.341]);
+
+      const refreshAccentUniforms = () => {
+        cachedAccent = parseCssRgb('--accent-rgb', [0.063, 0.725, 0.506]);
+        cachedAccentHi = parseCssRgb('--accent-hi-rgb', [0.204, 0.827, 0.600]);
+        cachedAccentDim = parseCssRgb('--accent-dim-rgb', [0.016, 0.471, 0.341]);
+      };
+
+      window.addEventListener('accentchange', refreshAccentUniforms);
+      window.addEventListener('themechange', refreshAccentUniforms);
 
       let mouse = { x: 0.5, y: 0.5, targetX: 0.5, targetY: 0.5 };
       window.addEventListener('mousemove', (e) => {
@@ -400,6 +423,9 @@
         gl.uniform1f(uTime, elapsed);
         gl.uniform1f(uLight, isLight);
         gl.uniform1f(uInt, intensityMultiplier);
+        if (uAccent) gl.uniform3f(uAccent, cachedAccent[0], cachedAccent[1], cachedAccent[2]);
+        if (uAccentHi) gl.uniform3f(uAccentHi, cachedAccentHi[0], cachedAccentHi[1], cachedAccentHi[2]);
+        if (uAccentDim) gl.uniform3f(uAccentDim, cachedAccentDim[0], cachedAccentDim[1], cachedAccentDim[2]);
 
         gl.drawArrays(gl.TRIANGLES, 0, 6);
       };
@@ -577,7 +603,9 @@
           vx: Math.cos(angle) * spd,
           vy: Math.sin(angle) * spd,
           life: 1.0,
-          color: Math.random() > 0.5 ? '#10b981' : '#2dd4bf'
+          color: Math.random() > 0.5
+            ? (getComputedStyle(document.documentElement).getPropertyValue('--nature').trim() || '#10b981')
+            : (getComputedStyle(document.documentElement).getPropertyValue('--glacier').trim() || '#2dd4bf')
         });
       }
     }
@@ -617,8 +645,13 @@
           ctx.lineTo(endX, endY);
           ctx.lineWidth = thickness;
           ctx.lineCap = 'round';
-          ctx.strokeStyle = '#10b981';
-          ctx.shadowColor = '#34d399';
+          const cs = getComputedStyle(document.documentElement);
+          const acc = cs.getPropertyValue('--nature').trim() || '#10b981';
+          const accHi = cs.getPropertyValue('--nature-hi').trim() || '#34d399';
+          const accGl = cs.getPropertyValue('--glacier').trim() || '#2dd4bf';
+
+          ctx.strokeStyle = acc;
+          ctx.shadowColor = accHi;
           ctx.shadowBlur = 25;
           ctx.stroke();
 
@@ -628,7 +661,7 @@
           ctx.lineTo(endX, endY);
           ctx.lineWidth = thickness * 0.45;
           ctx.strokeStyle = '#f0fdf4';
-          ctx.shadowColor = '#2dd4bf';
+          ctx.shadowColor = accGl;
           ctx.shadowBlur = 12;
           ctx.stroke();
 
@@ -638,7 +671,7 @@
           const nodeY = startY + (endY - startY) * pNorm;
           ctx.beginPath();
           ctx.arc(nodeX, nodeY, thickness * 0.7, 0, Math.PI * 2);
-          ctx.fillStyle = '#34d399';
+          ctx.fillStyle = accHi;
           ctx.shadowBlur = 20;
           ctx.fill();
 
@@ -840,7 +873,9 @@
 
           ctx.beginPath();
           ctx.lineWidth = isMajor ? 1.4 : 0.85;
-          ctx.strokeStyle = isMajor ? 'rgba(4, 120, 87, 0.28)' : 'rgba(16, 185, 129, 0.14)';
+          const accRgb = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim() || '16, 185, 129';
+          const accDimRgb = getComputedStyle(document.documentElement).getPropertyValue('--accent-dim-rgb').trim() || '4, 120, 87';
+          ctx.strokeStyle = isMajor ? `rgba(${accDimRgb}, 0.28)` : `rgba(${accRgb}, 0.14)`;
 
           for (let x = 0; x <= canvas.width + stepX; x += stepX) {
             // Harmonic terrain wave

@@ -32,13 +32,13 @@ header { padding: 140px 0 64px; }
 }
 
 body.light .header-label {
-  color: #047857;
+  color: var(--nature);
   font-weight: 600;
 }
 
 body.light .header-label::before {
-  background: #047857;
-  box-shadow: 0 0 6px rgba(4, 120, 87, 0.4);
+  background: var(--nature);
+  box-shadow: 0 0 6px rgba(var(--accent-rgb), 0.4);
 }
 
 h1 {

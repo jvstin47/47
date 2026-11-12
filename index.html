@@ -21,6 +21,18 @@
       if (saved === 'light' || (!saved && prefersLight)) {
         document.documentElement.classList.add('light');
       }
+      var acc = localStorage.getItem('accent-color');
+      if (acc && /^#[0-9a-fA-F]{6}$/.test(acc)) {
+        var r = parseInt(acc.slice(1, 3), 16);
+        var g = parseInt(acc.slice(3, 5), 16);
+        var b = parseInt(acc.slice(5, 7), 16);
+        var s = document.documentElement.style;
+        s.setProperty('--nature', acc);
+        s.setProperty('--gold', acc);
+        s.setProperty('--accent-rgb', r + ', ' + g + ', ' + b);
+        s.setProperty('--nature-glow', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.16)');
+        s.setProperty('--gold-glow', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.16)');
+      }
     })();
   </script>
 </head>
@@ -420,7 +432,7 @@
         <div class="prism-card-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;">
             <p class="project-type">Edge AI · Autonomous Robotics · Qualcomm RB5 · LoRa Mesh · SIH 2026 (PS: SIH26177)</p>
-            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(16,185,129,0.15);color:var(--nature);border:1px solid rgba(16,185,129,0.3);">● SIH Shortlisted · PS: SIH26177</span>
+            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(var(--accent-rgb),0.15);color:var(--nature);border:1px solid rgba(var(--accent-rgb),0.3);">● SIH Shortlisted · PS: SIH26177</span>
           </div>
           <h3 class="project-title chroma-text">Phoenix X — Autonomous AI Search &amp; Rescue (SAR) Micro-UAV</h3>
           <p class="project-desc">
@@ -515,7 +527,7 @@
         <div class="prism-card-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;">
             <p class="project-type">Creative Web · Canvas 2D · Historical Archive · React 19</p>
-            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(16,185,129,0.15);color:#10b981;">● Live Demo</span>
+            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(var(--accent-rgb),0.15);color:var(--nature);">● Live Demo</span>
           </div>
           <h3 class="project-title chroma-text">Captain Lakshmi: Invicta — Scroll-Driven Historical Monograph</h3>
           <p class="project-desc">
@@ -564,7 +576,7 @@
         <div class="prism-card-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;">
             <p class="project-type">Spatial AI · Computer Vision · SIH 2026</p>
-            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(16,185,129,0.15);color:var(--nature);border:1px solid rgba(16,185,129,0.3);">● PS: SIH26169</span>
+            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(var(--accent-rgb),0.15);color:var(--nature);border:1px solid rgba(var(--accent-rgb),0.3);">● PS: SIH26169</span>
           </div>
           <h3 class="project-title chroma-text">AI-Based Virtual Camera Tracking (SIH 26169)</h3>
           <p class="project-desc">
@@ -682,7 +694,7 @@
         <div class="prism-card-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;">
             <p class="project-type">Creative Web · WebGL · Number Theory</p>
-            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(16,185,129,0.15);color:#10b981;">● Live Demo</span>
+            <span class="proj-badge" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 8px;border-radius:12px;background:rgba(var(--accent-rgb),0.15);color:var(--nature);">● Live Demo</span>
           </div>
           <h3 class="project-title chroma-text">CRT Modular Lock &amp; 3D Web Mechanics</h3>
           <p class="project-desc">
@@ -1417,7 +1429,7 @@
         <span class="tech-term-dot green" onclick="maximizeTerminal()" title="Toggle Fullscreen Expansion">⤢</span>
       </div>
       <span class="tech-terminal-title">
-        <span style="color:#34d399;">⚡</span> <span style="color:#cbd5e1;">justin@monocoque:</span> <span id="term-pwd" style="color:#2dd4bf;">~/projects</span> <span style="color:#94a3b8;">(bash)</span>
+        <span style="color:var(--nature-hi);">⚡</span> <span style="color:#cbd5e1;">justin@monocoque:</span> <span id="term-pwd" style="color:var(--glacier);">~/projects</span> <span style="color:#94a3b8;">(bash)</span>
       </span>
       <div style="display:flex;align-items:center;gap:8px;">
         <button class="term-popout-btn" onclick="openSatelliteWindow()" title="Detach HUD to Floating Desktop Window (Cross-Window Kinetic Physics)">Pop out HUD ↗</button>
@@ -1426,8 +1438,8 @@
     </div>
     <div class="tech-terminal-body" id="term-body">
       <div class="tech-terminal-output" id="term-output">
-        <div style="color:#34d399;margin-bottom:8px;font-weight:600;">⚡ Justin Joe Mathew — Systems Diagnostic Console v2.6.4</div>
-        <div style="color:#cbd5e1;margin-bottom:12px;">Interactive engineering terminal online. Type <span style="color:#34d399;font-weight:600;">help</span> for supported commands, or inspect active subsystems below.</div>
+        <div style="color:var(--nature-hi);margin-bottom:8px;font-weight:600;">⚡ Justin Joe Mathew — Systems Diagnostic Console v2.6.4</div>
+        <div style="color:#cbd5e1;margin-bottom:12px;">Interactive engineering terminal online. Type <span style="color:var(--nature-hi);font-weight:600;">help</span> for supported commands, or inspect active subsystems below.</div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
           <span class="system-spec-badge">KERNEL: Darwin / macOS arm64</span>
           <span class="system-spec-badge">STACK: Python 3.11 · TypeScript · Kotlin · C++</span>
@@ -1445,7 +1457,7 @@
     <div id="term-viewport" class="term-viewport-overlay">
       <div class="term-viewport-header">
         <div class="term-viewport-title-wrap">
-          <span style="color:#2dd4bf;">📄</span>
+          <span style="color:var(--glacier);">📄</span>
           <span class="term-viewport-filename" id="term-viewport-filename">README.md</span>
           <span class="term-viewport-meta" id="term-viewport-meta">VIEWPORT MODE · READ-ONLY</span>
         </div>
@@ -1557,6 +1569,7 @@
 <script src="js/components/cert-modal.js"></script>
 <script src="js/components/tech-terminal.js"></script>
 <script src="js/components/command-menu.js"></script>
+<script src="js/components/accent-controller.js"></script>
 <script src="js/app.js"></script>
 <script src="interactive-trends.js?v=20261010b"></script>
 

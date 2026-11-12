@@ -18,7 +18,8 @@
       'PrismView',
       'CertModal',
       'TechTerminal',
-      'CommandMenu'
+      'CommandMenu',
+      'AccentController'
     ], factory);
   } else if (typeof module === 'object' && module.exports) {
     module.exports = factory(
@@ -34,7 +35,8 @@
       require('./components/prism-view'),
       require('./components/cert-modal'),
       require('./components/tech-terminal'),
-      require('./components/command-menu')
+      require('./components/command-menu'),
+      require('./components/accent-controller')
     );
   } else {
     root.Portfolio = factory(
@@ -50,7 +52,8 @@
       root.PrismView,
       root.CertModal,
       root.TechTerminal,
-      root.CommandMenu
+      root.CommandMenu,
+      root.AccentController
     );
   }
 })(typeof self !== 'undefined' ? self : this, function (
@@ -66,7 +69,8 @@
   PrismView,
   CertModal,
   TechTerminal,
-  CommandMenu
+  CommandMenu,
+  AccentController
 ) {
   'use strict';
 
@@ -85,6 +89,7 @@
       this.certModal = null;
       this.techTerminal = null;
       this.commandMenu = null;
+      this.accentController = null;
 
       this.isInitialized = false;
     }
@@ -131,6 +136,12 @@
           this.commandMenu = new CommandMenu({
             store: this.store,
             dataStore: this.dataStore
+          });
+        }
+
+        if (AccentController) {
+          this.accentController = new AccentController({
+            store: this.store
           });
         }
 
