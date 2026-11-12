@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261112">
-  <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="styles.css?v=20261112d">
+  <link rel="stylesheet" href="projects.css?v=20261112d">
   <script>
     (function () {
       var saved = localStorage.getItem('theme');
@@ -33,6 +33,39 @@
         s.setProperty('--nature-glow', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.16)');
         s.setProperty('--gold-glow', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.16)');
       }
+
+      window.toggleTheme = function () {
+        var isLight = document.body.classList.toggle('light');
+        document.documentElement.classList.toggle('light', isLight);
+        var btn = document.getElementById('theme-btn');
+        if (btn) {
+          btn.textContent = isLight ? '☀' : '☾';
+          btn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+          btn.setAttribute('title', isLight ? 'Switch to Dark Mode (Hotkey: L)' : 'Switch to Light Mode (Hotkey: L)');
+        }
+        try { localStorage.setItem('theme', isLight ? 'light' : 'dark'); } catch (e) {}
+        if (window.PortfolioStore) {
+          window.PortfolioStore.setState({ theme: isLight ? 'light' : 'dark' });
+        }
+      };
+
+      window.toggleMobileDock = function (e) {
+        if (e && e.stopPropagation) e.stopPropagation();
+        var dock = document.getElementById('floating-iso-dock');
+        var toggle = document.getElementById('iso-dock-toggle');
+        if (!dock) return;
+        var isOpen = dock.classList.toggle('is-open');
+        if (toggle) toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      document.addEventListener('click', function (e) {
+        var dock = document.getElementById('floating-iso-dock');
+        var toggle = document.getElementById('iso-dock-toggle');
+        if (dock && dock.classList.contains('is-open') && !dock.contains(e.target)) {
+          dock.classList.remove('is-open');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     })();
   </script>
 </head>
@@ -853,8 +886,21 @@
 
 
   <!-- 2. FLOATING ISOMETRIC SOCIAL & QUICK LINKS DOCK (From Uiverse.io by MijailVillegas) -->
-<aside class="floating-iso-dock" aria-label="Quick Connect Dock">
-  <div class="card iso-card">
+<aside class="floating-iso-dock" id="floating-iso-dock" aria-label="Quick Connect Dock">
+  <button type="button" class="iso-dock-toggle" id="iso-dock-toggle" onclick="toggleMobileDock(event)" aria-label="Toggle Quick Links" aria-expanded="false" title="Quick Links">
+    <svg class="iso-toggle-icon iso-icon-connect" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+    <svg class="iso-toggle-icon iso-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+  <div class="card iso-card" id="iso-card">
     <ul>
       <li class="iso-pro">
         <span></span><span></span><span></span>
@@ -926,8 +972,8 @@
   <script src="js/components/cert-modal.js"></script>
   <script src="js/components/tech-terminal.js"></script>
   <script src="js/components/command-menu.js"></script>
-  <script src="js/components/accent-controller.js?v=20261112"></script>
+  <script src="js/components/accent-controller.js?v=20261112d"></script>
   <script src="js/app.js"></script>
-  <script src="interactive-trends.js?v=20261112"></script>
+  <script src="interactive-trends.js?v=20261112d"></script>
 </body>
 </html>

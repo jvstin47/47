@@ -26,6 +26,7 @@
       this.initScrollSpy();
       this.initScrollReveal();
       this.initMobileNav();
+      this.initFloatingDock();
       this.initToolkitFilter();
       this.initCopyEmail();
     }
@@ -104,10 +105,90 @@
     }
 
     initMobileNav() {
-      window.toggleMobileNav = function () {
-        const links = document.getElementById('nav-links');
-        if (links) links.classList.toggle('open');
+      const links = document.getElementById('nav-links');
+      const hamburger = document.querySelector('.nav-hamburger');
+
+      window.toggleMobileNav = function (e) {
+        if (e && e.stopPropagation) e.stopPropagation();
+        if (!links) return;
+        const isOpen = links.classList.toggle('open');
+        if (hamburger) hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       };
+
+      if (links) {
+        links.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            links.classList.remove('open');
+            if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      document.addEventListener('click', (e) => {
+        if (links && links.classList.contains('open') && !links.contains(e.target) && !e.target.closest('.nav-hamburger')) {
+          links.classList.remove('open');
+          if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && links && links.classList.contains('open')) {
+          links.classList.remove('open');
+          if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    initFloatingDock() {
+      const dock = document.getElementById('floating-iso-dock');
+      const toggle = document.getElementById('iso-dock-toggle');
+
+      const setOpen = (open) => {
+        const d = dock || document.getElementById('floating-iso-dock');
+        const t = toggle || document.getElementById('iso-dock-toggle');
+        if (!d) return;
+        const next = typeof open === 'boolean' ? open : !d.classList.contains('is-open');
+        d.classList.toggle('is-open', next);
+        if (t) t.setAttribute('aria-expanded', next ? 'true' : 'false');
+      };
+
+      // Expose globally for inline onclick and external callers
+      window.toggleMobileDock = (e) => {
+        if (e && e.stopPropagation) e.stopPropagation();
+        setOpen();
+      };
+
+      if (!dock || !toggle) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setOpen();
+      });
+
+      dock.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => setOpen(false));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (dock.classList.contains('is-open') && !dock.contains(e.target)) {
+          setOpen(false);
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && dock.classList.contains('is-open')) {
+          setOpen(false);
+        }
+      });
+
+      // Auto-collapse on significant touch scroll so it never obstructs
+      let lastScroll = window.scrollY;
+      window.addEventListener('scroll', () => {
+        if (dock.classList.contains('is-open') && Math.abs(window.scrollY - lastScroll) > 40) {
+          setOpen(false);
+          lastScroll = window.scrollY;
+        }
+      }, { passive: true });
     }
 
     initToolkitFilter() {

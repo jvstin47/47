@@ -564,6 +564,9 @@
     function resizeMainCanvas() {
       mainCanvas.width = window.innerWidth;
       mainCanvas.height = window.innerHeight;
+      mainCanvas.style.width = '100%';
+      mainCanvas.style.height = '100%';
+      mainCanvas.style.maxWidth = '100vw';
     }
     window.addEventListener('resize', resizeMainCanvas);
     resizeMainCanvas();
@@ -993,8 +996,9 @@
         height = window.innerHeight;
         mercCanvas.width = width * dpr;
         mercCanvas.height = height * dpr;
-        mercCanvas.style.width = width + 'px';
-        mercCanvas.style.height = height + 'px';
+        mercCanvas.style.width = '100%';
+        mercCanvas.style.height = '100%';
+        mercCanvas.style.maxWidth = '100vw';
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
       window.addEventListener('resize', resize);

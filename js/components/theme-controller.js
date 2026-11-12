@@ -23,6 +23,11 @@
     init() {
       if (typeof document === 'undefined') return;
 
+      // Expose globally so inline onclick="toggleTheme()" never throws ReferenceError
+      if (typeof window !== 'undefined') {
+        window.toggleTheme = () => this.toggle();
+      }
+
       this.themeBtn = document.getElementById('theme-btn');
       const currentTheme = this.getInitialTheme();
       this.apply(currentTheme, false);

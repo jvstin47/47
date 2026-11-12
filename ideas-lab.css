@@ -294,3 +294,88 @@ footer.page-footer .footer-nav a:hover { color: var(--gold); }
   header      { padding: 100px 0 48px; }
   footer.page-footer { flex-direction: column; gap: 16px; }
 }
+
+/* ── COMPREHENSIVE MOBILE & TOUCH REDESIGN (<= 640px) ── */
+@media (max-width: 640px) {
+  header h1 {
+    font-size: clamp(38px, 11vw, 56px);
+    line-height: 1.05;
+  }
+
+  .header-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .counter-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 18px;
+  }
+
+  .counter-item {
+    padding: 10px 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .counter-num {
+    font-size: 20px;
+  }
+
+  /* Horizontal swipeable filter row */
+  .filter-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+    margin-right: -16px;
+    padding-right: 16px;
+    gap: 8px;
+  }
+
+  .filter-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-label {
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+    min-height: 38px;
+    padding: 6px 14px;
+    white-space: nowrap;
+    font-size: 11px;
+  }
+
+  /* Ideas Cards */
+  .idea-card {
+    padding: 22px 18px;
+  }
+
+  .idea-title {
+    font-size: 19px;
+  }
+
+  .idea-body {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .principle {
+    padding: 28px 20px;
+  }
+
+  .principle p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}

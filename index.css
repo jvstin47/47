@@ -1439,3 +1439,167 @@ body.light .proof-label {
   background: var(--gold-glow);
 }
 
+
+/* ── COMPREHENSIVE MOBILE & TOUCH REDESIGN (<= 640px) ── */
+@media (max-width: 640px) {
+  .hero-name {
+    font-size: clamp(38px, 10.5vw, 56px);
+    margin-bottom: 10px;
+    line-height: 1.05;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    margin-bottom: 16px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-role {
+    font-size: 11.5px;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.62;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .hero-proof-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+    margin-top: 28px;
+    padding-top: 20px;
+  }
+
+  .proof-card {
+    padding: 12px 14px;
+    gap: 4px;
+  }
+
+  .proof-stat {
+    font-size: 26px;
+  }
+
+  .proof-label {
+    font-size: 9.5px;
+  }
+
+  /* Core Disciplines Interactive Card */
+  .disciplines-card {
+    padding: 18px 16px;
+  }
+
+  .discipline-tabs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+
+  .discipline-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .discipline-tab {
+    flex: 1 0 auto;
+    white-space: nowrap;
+    font-size: 11px;
+    padding: 8px 12px;
+    text-align: center;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Projects & Ideas teasers */
+  .project-card,
+  .prism-card {
+    padding: 22px 18px !important;
+  }
+
+  .project-title {
+    font-size: 20px;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .project-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .project-links {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .project-link,
+  .repo-link {
+    flex: 1;
+    justify-content: center;
+    min-height: 42px;
+  }
+
+  /* Contact & Email */
+  .email-copy-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .email-copy-wrap .contact-email {
+    font-size: clamp(16px, 5.2vw, 22px);
+    word-break: break-all;
+  }
+
+  .copy-action-btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-link {
+    min-height: 48px;
+    padding: 12px 14px;
+  }
+
+  .availability-card {
+    padding: 20px 18px;
+  }
+
+  .avail-title {
+    font-size: 20px;
+  }
+}
