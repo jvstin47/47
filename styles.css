@@ -628,7 +628,7 @@ select {
 ────────────────────────────────────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 32px 0;
+  padding: 48px 0 32px;
   position: relative;
   z-index: 1;
   background: var(--bg);
@@ -639,58 +639,114 @@ select {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--pad-x);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr auto;
+  align-items: start;
+  gap: 32px;
 }
 
 .footer-left {
   display: flex;
-  align-items: center;
-  gap: 18px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .footer-logo {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 20px;
   color: var(--gold);
+  letter-spacing: 0.01em;
+}
+
+.footer-tagline {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--sub);
+  max-width: 320px;
 }
 
 .footer-copy {
-  font-size: 11px;
-  color: var(--faint);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--muted);
   letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nature);
+  margin-bottom: 2px;
 }
 
 .footer-nav {
   display: flex;
-  gap: 22px;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .footer-nav a {
-  font-size: 11px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
   color: var(--faint);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: color 0.2s;
+  letter-spacing: 0.04em;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.footer-nav a:hover { color: var(--gold); }
+.footer-nav a:hover {
+  color: var(--gold);
+  transform: translateX(2px);
+}
 
 .back-top {
+  font-family: var(--font-mono);
   font-size: 11px;
   color: var(--faint);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: color 0.2s;
-  display: flex;
+  transition: color 0.2s, border-color 0.2s;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  justify-self: end;
 }
 
-.back-top:hover { color: var(--gold); }
+.back-top:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+@media (max-width: 780px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+  .footer-left {
+    grid-column: 1 / -1;
+  }
+  .back-top {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
 
 /* ──────────────────────────────────────────────────────────────
    SCROLLBAR
@@ -4342,9 +4398,14 @@ body.light .cmd-dialog {
 .accent-picker-bar {
   width: 100%;
   max-width: var(--max-w);
-  margin: 24px auto 0;
-  padding-top: 20px;
+  margin: 28px auto 0;
+  padding: 20px var(--pad-x) 0;
   border-top: 1px solid var(--border);
+}
+
+.wrap .accent-picker-bar {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .accent-picker-inner {
