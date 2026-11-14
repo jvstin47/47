@@ -3,7 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Projects — Justin Mathew</title>
+  <title>Projects — Justin Joe Mathew</title>
+  <meta name="description" content="Engineering projects by Justin Joe Mathew — Phoenix X autonomous SAR UAV, F1 Monte Carlo strategy engine, AroggyaGram health network, WebGL demos, and more.">
+  <link rel="canonical" href="https://jvstin47.github.io/47/projects.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects — Justin Joe Mathew">
+  <meta property="og:description" content="Engineering projects by Justin Joe Mathew — Phoenix X autonomous SAR UAV, F1 Monte Carlo strategy engine, AroggyaGram health network, WebGL demos, and more.">
+  <meta property="og:url" content="https://jvstin47.github.io/47/projects.html">
+  <meta property="og:image" content="https://jvstin47.github.io/47/images/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Justin Joe Mathew">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects — Justin Joe Mathew">
+  <meta name="twitter:description" content="Engineering projects by Justin Joe Mathew — Phoenix X autonomous SAR UAV, F1 Monte Carlo strategy engine, AroggyaGram health network, WebGL demos, and more.">
+  <meta name="twitter:image" content="https://jvstin47.github.io/47/images/og-preview.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -104,22 +119,32 @@
         Ten production systems. One underlying philosophy: turning mathematical models, physical hardware, and human urgency into deterministic, elegant software.
       </p>
 
+      <!-- Category Filter Chips -->
+      <div class="proj-filter-bar" id="proj-filter-bar" role="group" aria-label="Filter projects by category">
+        <button type="button" class="proj-chip active" data-filter="all">All (10)</button>
+        <button type="button" class="proj-chip" data-filter="robotics">Robotics &amp; Vision</button>
+        <button type="button" class="proj-chip" data-filter="simulation">Simulation &amp; AI</button>
+        <button type="button" class="proj-chip" data-filter="mobile">Mobile &amp; IoT</button>
+        <button type="button" class="proj-chip" data-filter="web">Web &amp; Interactive</button>
+        <button type="button" class="proj-chip" data-filter="health">Health Tech</button>
+      </div>
+
       <div class="intro-jump-bar" aria-label="Project index">
-        <a href="#p8" class="jump-pill" style="border-color:rgba(var(--accent-rgb),0.4);"><span class="pill-num" style="color:var(--nature);">★</span> Phoenix X SAR UAV</a>
-        <a href="#p10" class="jump-pill" style="border-color:rgba(var(--accent-rgb),0.4);"><span class="pill-num" style="color:var(--nature);">★</span> Virtual Camera Tracking</a>
-        <a href="#p1" class="jump-pill"><span class="pill-num">01</span> AroggyaGram-3</a>
-        <a href="#p2" class="jump-pill"><span class="pill-num">02</span> F1 Strategy Sim</a>
-        <a href="#p3" class="jump-pill"><span class="pill-num">03</span> AutoMeter IoT</a>
-        <a href="#p4" class="jump-pill"><span class="pill-num">04</span> Opportunity Android</a>
-        <a href="#p5" class="jump-pill"><span class="pill-num">05</span> CRT Lock</a>
-        <a href="#p6" class="jump-pill"><span class="pill-num">06</span> Capt. Lakshmi Invicta</a>
-        <a href="#p7" class="jump-pill"><span class="pill-num">07</span> Song Chord Analyzer</a>
-        <a href="#p9" class="jump-pill"><span class="pill-num">08</span> UNO-Q Arena</a>
+        <a href="#p8" class="jump-pill" data-category="robotics" style="border-color:rgba(var(--accent-rgb),0.4);"><span class="pill-num" style="color:var(--nature);">★</span> Phoenix X SAR UAV</a>
+        <a href="#p10" class="jump-pill" data-category="robotics" style="border-color:rgba(var(--accent-rgb),0.4);"><span class="pill-num" style="color:var(--nature);">★</span> Virtual Camera Tracking</a>
+        <a href="#p1" class="jump-pill" data-category="health"><span class="pill-num">01</span> AroggyaGram-3</a>
+        <a href="#p2" class="jump-pill" data-category="simulation"><span class="pill-num">02</span> F1 Strategy Sim</a>
+        <a href="#p3" class="jump-pill" data-category="mobile"><span class="pill-num">03</span> AutoMeter IoT</a>
+        <a href="#p4" class="jump-pill" data-category="mobile"><span class="pill-num">04</span> Opportunity Android</a>
+        <a href="#p5" class="jump-pill" data-category="web"><span class="pill-num">05</span> CRT Lock</a>
+        <a href="#p6" class="jump-pill" data-category="web"><span class="pill-num">06</span> Capt. Lakshmi Invicta</a>
+        <a href="#p7" class="jump-pill" data-category="simulation"><span class="pill-num">07</span> Song Chord Analyzer</a>
+        <a href="#p9" class="jump-pill" data-category="web"><span class="pill-num">08</span> UNO-Q Arena</a>
       </div>
     </section>
 
     <!-- FLAGSHIP PROJECT: PHOENIX X AUTONOMOUS AI SAR UAV (SIH 26177) -->
-    <section class="project hardware-panel-card" id="p8" style="border-left-color: var(--nature);">
+    <section class="project hardware-panel-card" id="p8" data-category="robotics" style="border-left-color: var(--nature);">
       <span class="bg-num" style="color: rgba(var(--accent-rgb),0.06);">01</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -229,7 +254,7 @@
     </section>
 
     <!-- PROJECT 01: AROGGYAGRAM-3 -->
-    <section class="project" id="p1">
+    <section class="project" id="p1" data-category="health">
       <span class="bg-num">01</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -295,7 +320,7 @@
     </section>
 
     <!-- PROJECT 02: F1 MONTE CARLO -->
-    <section class="project" id="p2">
+    <section class="project" id="p2" data-category="simulation">
       <span class="bg-num">02</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -364,7 +389,7 @@
     </section>
 
     <!-- PROJECT 03: AUTOMETER -->
-    <section class="project" id="p3">
+    <section class="project" id="p3" data-category="mobile">
       <span class="bg-num">03</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -430,7 +455,7 @@
     </section>
 
     <!-- PROJECT 04: OPPORTUNITY ANDROID -->
-    <section class="project" id="p4">
+    <section class="project" id="p4" data-category="mobile">
       <span class="bg-num">04</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -496,7 +521,7 @@
     </section>
 
     <!-- PROJECT 05: CRT LOCK & 3D INTERACTIVE -->
-    <section class="project" id="p5">
+    <section class="project" id="p5" data-category="web">
       <span class="bg-num">05</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -567,7 +592,7 @@
     </section>
 
     <!-- PROJECT 06: CAPTAIN LAKSHMI INVICTA -->
-    <section class="project" id="p6">
+    <section class="project" id="p6" data-category="web">
       <span class="bg-num">06</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -636,7 +661,7 @@
     </section>
 
     <!-- PROJECT 07: SONG CHORD ANALYZER -->
-    <section class="project" id="p7">
+    <section class="project" id="p7" data-category="simulation">
       <span class="bg-num">07</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -709,7 +734,7 @@
     </section>
 
     <!-- PROJECT 10: VIRTUAL CAMERA TRACKING (SIH 26169) -->
-    <section class="project" id="p10">
+    <section class="project" id="p10" data-category="robotics">
       <span class="bg-num">02</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -779,7 +804,7 @@
     </section>
 
     <!-- PROJECT 09: UNO-Q ARENA -->
-    <section class="project" id="p9">
+    <section class="project" id="p9" data-category="web">
       <span class="bg-num">09</span>
       <div class="proj-top">
         <div class="proj-top-left">
@@ -974,6 +999,33 @@
   <script src="js/components/command-menu.js"></script>
   <script src="js/components/accent-controller.js?v=20261112d"></script>
   <script src="js/app.js"></script>
-  <script src="interactive-trends.js?v=20261112d"></script>
+  <script src="js/features/cross-window-physics.js?v=20261114"></script>
+  <script src="js/features/mercury-canvas.js?v=20261114"></script>
+  <script src="interactive-trends.js?v=20261114"></script>
+
+<script>
+  (function () {
+    const bar = document.getElementById('proj-filter-bar');
+    if (!bar) return;
+    bar.addEventListener('click', function (e) {
+      const chip = e.target.closest('.proj-chip');
+      if (!chip) return;
+      bar.querySelectorAll('.proj-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.dataset.filter;
+      document.querySelectorAll('.project[data-category]').forEach(function (sec) {
+        const match = filter === 'all' || sec.dataset.category === filter;
+        sec.style.display = match ? '' : 'none';
+      });
+      document.querySelectorAll('.intro-jump-bar .jump-pill[data-category]').forEach(function (pill) {
+        const match = filter === 'all' || pill.dataset.category === filter;
+        pill.style.opacity = match ? '1' : '0.28';
+      });
+    });
+  })();
+</script>
+
+<!-- Privacy-first analytics (GoatCounter) -->
+<script data-goatcounter="https://jvstin47.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

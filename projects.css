@@ -529,3 +529,56 @@ footer.projects-footer {
     padding: 32px 16px 28px 18px !important;
   }
 }
+
+/* ── Category Filter Chips in Intro ── */
+.proj-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 24px;
+}
+.proj-chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--faint);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.proj-chip:hover {
+  border-color: var(--nature);
+  color: var(--nature);
+  transform: translateY(-1px);
+}
+.proj-chip.active {
+  background: var(--nature);
+  color: #030705;
+  border-color: var(--nature);
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(var(--accent-rgb), 0.3);
+}
+body.light .proj-chip {
+  background: #ffffff;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+body.light .proj-chip.active {
+  background: var(--nature);
+  color: #ffffff;
+  border-color: var(--nature);
+}
+@media (max-width: 600px) {
+  .proj-filter-bar {
+    gap: 6px;
+    margin: 16px 0 20px;
+  }
+  .proj-chip {
+    font-size: 10px;
+    padding: 5px 11px;
+  }
+}

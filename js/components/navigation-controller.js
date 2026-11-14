@@ -150,6 +150,16 @@
         const next = typeof open === 'boolean' ? open : !d.classList.contains('is-open');
         d.classList.toggle('is-open', next);
         if (t) t.setAttribute('aria-expanded', next ? 'true' : 'false');
+
+        // Focus management: move focus to first action link on open, return to toggle on close
+        if (next) {
+          setTimeout(() => {
+            const first = d.querySelector('.iso-card a');
+            if (first) first.focus();
+          }, 60);
+        } else if (t && document.activeElement && d.contains(document.activeElement)) {
+          t.focus();
+        }
       };
 
       // Expose globally for inline onclick and external callers
@@ -165,18 +175,47 @@
         setOpen();
       });
 
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setOpen();
+        }
+      });
+
       dock.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => setOpen(false));
       });
 
-      document.addEventListener('click', (e) => {
-        if (dock.classList.contains('is-open') && !dock.contains(e.target)) {
+      // Keyboard accessibility: Tab trapping inside expanded speed dial
+      dock.addEventListener('keydown', (e) => {
+        if (!dock.classList.contains('is-open')) return;
+        if (e.key === 'Escape') {
+          e.preventDefault();
           setOpen(false);
+          return;
+        }
+        if (e.key === 'Tab') {
+          const links = [...dock.querySelectorAll('.iso-card a')];
+          if (!links.length) return;
+          const first = links[0];
+          const last = links[links.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === first || document.activeElement === toggle) {
+              e.preventDefault();
+              (document.activeElement === first ? toggle : last).focus();
+            }
+          } else {
+            if (document.activeElement === last || document.activeElement === toggle) {
+              e.preventDefault();
+              (document.activeElement === last ? toggle : first).focus();
+            }
+          }
         }
       });
 
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && dock.classList.contains('is-open')) {
+      document.addEventListener('click', (e) => {
+        if (dock.classList.contains('is-open') && !dock.contains(e.target)) {
           setOpen(false);
         }
       });

@@ -3,7 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Ideas Lab — Justin Mathew</title>
+  <title>Ideas Lab — Justin Joe Mathew</title>
+  <meta name="description" content="Ideas Lab — Justin Joe Mathew's active research threads, architectural hypotheses, and design experiments. Building, thinking, exploring.">
+  <link rel="canonical" href="https://jvstin47.github.io/47/ideas-lab.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ideas Lab — Justin Joe Mathew">
+  <meta property="og:description" content="Ideas Lab — Justin Joe Mathew's active research threads, architectural hypotheses, and design experiments. Building, thinking, exploring.">
+  <meta property="og:url" content="https://jvstin47.github.io/47/ideas-lab.html">
+  <meta property="og:image" content="https://jvstin47.github.io/47/images/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Justin Joe Mathew">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ideas Lab — Justin Joe Mathew">
+  <meta name="twitter:description" content="Ideas Lab — Justin Joe Mathew's active research threads, architectural hypotheses, and design experiments. Building, thinking, exploring.">
+  <meta name="twitter:image" content="https://jvstin47.github.io/47/images/og-preview.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -103,22 +118,22 @@
 
     <div class="counter-bar anim anim-4">
       <div class="counter-item">
-        <span class="counter-num" id="cnt-all">6</span>
+        <span class="counter-num" id="cnt-all">10</span>
         <span class="counter-label">Total ideas</span>
       </div>
       <div class="counter-item">
         <span class="counter-dot" style="background:var(--thinking)"></span>
-        <span class="counter-num" id="cnt-thinking">2</span>
+        <span class="counter-num" id="cnt-thinking">4</span>
         <span class="counter-label">Thinking</span>
       </div>
       <div class="counter-item">
         <span class="counter-dot" style="background:var(--exploring)"></span>
-        <span class="counter-num" id="cnt-exploring">2</span>
+        <span class="counter-num" id="cnt-exploring">3</span>
         <span class="counter-label">Exploring</span>
       </div>
       <div class="counter-item">
         <span class="counter-dot" style="background:var(--building)"></span>
-        <span class="counter-num" id="cnt-building">1</span>
+        <span class="counter-num" id="cnt-building">2</span>
         <span class="counter-label">Building</span>
       </div>
       <div class="counter-item">
@@ -224,6 +239,62 @@
       </p>
       <hr class="idea-divider" />
       <p class="real-line"><strong>Why dropped?</strong> Accessibility requirements make opt-out audio patterns risky. The signal-to-noise problem wasn't solvable at low implementation cost.</p>
+    </div>
+
+    <div class="idea-card anim anim-7" data-status="building">
+      <div class="card-top">
+        <span class="idea-num">07</span>
+        <span class="status-tag status-building">Building</span>
+      </div>
+      <h2 class="idea-title">Telemetry-Driven Debug Views</h2>
+      <p class="idea-hook">What if logs told you what they meant, not just what happened?</p>
+      <p class="idea-body">
+        Distributed systems produce mountains of logs that require expert knowledge to interpret. I'm prototyping a debug view layer that maps telemetry events to plain-language system state explanations — bridging the gap between raw observability data and actionable understanding, even for engineers triageing on-call at 2 AM.
+      </p>
+      <hr class="idea-divider" />
+      <p class="real-line"><strong>What would make this real?</strong> A lightweight SDK that wraps existing log emitters and injects semantic annotation tags that a local rule engine renders into natural-language state summaries.</p>
+    </div>
+
+    <div class="idea-card anim anim-7" data-status="thinking">
+      <div class="card-top">
+        <span class="idea-num">08</span>
+        <span class="status-tag status-thinking">Thinking</span>
+      </div>
+      <h2 class="idea-title">Physical Status Surfaces</h2>
+      <p class="idea-hook">Could your ambient environment tell you something is wrong before you notice?</p>
+      <p class="idea-body">
+        Most systems notify through screens. But screens demand focused attention. I'm thinking about low-bandwidth physical outputs — ambient LED gradients, micro-haptic pulses, subtle peripheral luminescence — that surface telemetry health passively without active monitoring overhead.
+      </p>
+      <hr class="idea-divider" />
+      <p class="real-line"><strong>What would make this real?</strong> An open-hardware ESP32 desktop status beacon tethered to GitHub Actions / Prometheus webhook metrics.</p>
+    </div>
+
+    <div class="idea-card anim anim-8" data-status="exploring">
+      <div class="card-top">
+        <span class="idea-num">09</span>
+        <span class="status-tag status-exploring">Exploring</span>
+      </div>
+      <h2 class="idea-title">Zero-Latency Perceived UI</h2>
+      <p class="idea-hook">What if every interface felt instant, regardless of actual network latency?</p>
+      <p class="idea-body">
+        Perceived latency is not actual latency. Optimistic UI, predictive hover prefetching, and kinetic motion design can make a 300ms server roundtrip feel under 50ms. I'm cataloguing the full taxonomy — speculative execution, tactile press physics, and gesture-coupled animation — that eliminate felt waiting time.
+      </p>
+      <hr class="idea-divider" />
+      <p class="real-line"><strong>What would make this real?</strong> A framework-agnostic micro-library for touch/hover intention prediction and optimistic state rollback.</p>
+    </div>
+
+    <div class="idea-card anim anim-8" data-status="thinking">
+      <div class="card-top">
+        <span class="idea-num">10</span>
+        <span class="status-tag status-thinking">Thinking</span>
+      </div>
+      <h2 class="idea-title">Deterministic Chaos in Interface Animation</h2>
+      <p class="idea-hook">Can procedural randomness feel deliberate and alive?</p>
+      <p class="idea-body">
+        Generative motion often sits at two extremes: either too rigid and algorithmic, or too noisy and chaotic. I want to explore interface motion governed by deterministic pseudorandom seeds and physical constraints — motion that feels organic like handwriting, yet repeatable across browser sessions.
+      </p>
+      <hr class="idea-divider" />
+      <p class="real-line"><strong>What would make this real?</strong> A seeded PRNG animation driver that syncs generative SVG and Canvas physics to high-frequency touch interactions.</p>
     </div>
 
   </div>
@@ -396,6 +467,11 @@
 <script src="js/components/command-menu.js"></script>
 <script src="js/components/accent-controller.js?v=20261112d"></script>
 <script src="js/app.js"></script>
-<script src="interactive-trends.js?v=20261112d"></script>
+<script src="js/features/cross-window-physics.js?v=20261114"></script>
+<script src="js/features/mercury-canvas.js?v=20261114"></script>
+<script src="interactive-trends.js?v=20261114"></script>
+
+<!-- Privacy-first analytics (GoatCounter) -->
+<script data-goatcounter="https://jvstin47.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

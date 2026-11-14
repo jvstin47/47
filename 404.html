@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>404 — Page Not Found · Justin Joe Mathew</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (saved === 'light' || (!saved && prefersLight)) {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .four-oh-four-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .four-oh-four-inner {
+      text-align: center;
+      max-width: 520px;
+    }
+    .four-oh-four-code {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(6rem, 20vw, 10rem);
+      line-height: 1;
+      color: var(--nature, #10b981);
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .four-oh-four-headline {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      margin: 0 0 1rem;
+      color: var(--text, #f0fdf4);
+    }
+    .four-oh-four-sub {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.875rem;
+      color: var(--text-muted, #6b7280);
+      margin: 0 0 2rem;
+      line-height: 1.6;
+    }
+    .four-oh-four-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .four-oh-four-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--nature, #10b981);
+      text-decoration: none;
+      border: 1px solid var(--nature, #10b981);
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .four-oh-four-links a:hover {
+      background: var(--nature, #10b981);
+      color: #07130b;
+    }
+  </style>
+</head>
+<body>
+  <div class="four-oh-four-wrap">
+    <div class="four-oh-four-inner">
+      <p class="four-oh-four-code">404</p>
+      <h1 class="four-oh-four-headline">You've drifted off-course.</h1>
+      <p class="four-oh-four-sub">The page you're looking for doesn't exist or has moved.</p>
+      <nav class="four-oh-four-links" aria-label="Recovery navigation">
+        <a href="index.html">← Back Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="ideas-lab.html">Ideas Lab</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Privacy-first analytics (GoatCounter) -->
+  <script data-goatcounter="https://jvstin47.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

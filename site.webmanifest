@@ -1,22 +1,17 @@
 {
   "name": "Justin Mathew Portfolio",
   "short_name": "Justin Mathew",
+  "description": "Justin Joe Mathew — Software Engineer portfolio. Autonomous systems, edge AI, and tactile web.",
+  "start_url": "/47/",
+  "scope": "/47/",
   "icons": [
-    {
-      "src": "favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "favicon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    {"src": "favicon-32x32.png", "sizes": "32x32", "type": "image/png"},
+    {"src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png"},
+    {"src": "favicon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Projects", "short_name": "Projects", "url": "/47/projects.html"},
+    {"name": "Ideas Lab", "short_name": "Ideas", "url": "/47/ideas-lab.html"}
   ],
   "theme_color": "#07130b",
   "background_color": "#07130b",
