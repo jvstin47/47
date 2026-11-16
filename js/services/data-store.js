@@ -133,6 +133,7 @@
       title: 'Afterlight — Interactive 3D Lunar Archive',
       category: 'Planetary 3D WebGL / Archival',
       repoUrl: 'https://github.com/jvstin47/AfterLight',
+      liveUrl: 'https://afterlight-rouge.vercel.app/',
       summary: 'Immersive 3D planetary archive and simulation of humanity\'s permanent artifacts at the Apollo 12 / Surveyor 3 site with Three.js regolith photometry shaders, Vidicon CRT scanlines, and NASA archival telemetry.'
     }
   ];
@@ -157,7 +158,7 @@
     '~/projects/f1-strategy': ['README.md', 'strategy_solver.py', 'monte_carlo_10k.py', 'degradation_model.txt'],
     '~/projects/captain-lakshmi': ['README.md', 'canvas_renderer.ts', 'frame_stream.json', 'live_demo.url'],
     '~/projects/chord-analyzer': ['README.md', 'demucs_pipeline.py', 'btc_transformer.py', 'mir_pipeline.txt'],
-    '~/projects/afterlight': ['README.md', 'lunar_scene.js', 'regolith_shader.glsl', 'apollo12_registry.csv', 'repo.url'],
+    '~/projects/afterlight': ['README.md', 'lunar_scene.js', 'regolith_shader.glsl', 'apollo12_registry.csv', 'live_demo.url', 'repo.url'],
     '~/projects/aroggyagram': ['README.md', 'triage_agent.ts', 'proximity_router.ts', 'clinical_flow.txt'],
     '~/projects/autometer': ['README.md', 'pulse_sensor.dart', 'upi_generator.dart', 'fare_rules.txt'],
     '~/projects/opportunity-os': ['README.md', 'task_engine.kt', 'work_manager.kt', 'state_machine.txt'],
@@ -621,7 +622,8 @@ On November 19, 1969, Apollo 12 executed humanity's first precision piloted extr
 • 1969 Surveyor Vidicon CRT scanline emulation mode & 25-point optical Reseau grid
 • Quindar tone acoustic sequencer & NASA ground-to-air communications archive
 
-## Repository
+## Live Deployment & Repository
+• Live Demo: https://afterlight-rouge.vercel.app/
 • GitHub: https://github.com/jvstin47/AfterLight`,
     '~/projects/afterlight/lunar_scene.js': `// Three.js Scene Configuration: Statio Cognitum
 import * as THREE from 'three';
@@ -645,6 +647,7 @@ void main() {
 Surveyor 3,3.01239°S 23.42157°W,1967-04-17,281,Permanent (Surveyor Crater)
 Intrepid LM Descent Stage (LM-6),3.01239°S 23.42157°W,1969-11-14,2211,Permanent (Ocean of Storms)
 ALSEP Array A (SNAP-27 RTG),3.01239°S 23.42157°W,1969-11-19,57,Decommissioned (1977)`,
+    '~/projects/afterlight/live_demo.url': `https://afterlight-rouge.vercel.app/`,
     '~/projects/afterlight/repo.url': `https://github.com/jvstin47/AfterLight`
   };
 
