@@ -3187,8 +3187,8 @@ body.light .iso-pro span {
   transform: translate(-9px, -9px);
 }
 
-/* ── MOBILE / TOUCH COMPACT QUICK-CONNECT FAB (Compresses into a single corner icon <= 960px) ── */
-@media (max-width: 960px) {
+/* ── MOBILE, TABLET & COMPACT SCREEN QUICK-CONNECT FAB (Compresses into a single corner icon <= 1200px) ── */
+@media (max-width: 1200px) {
   .floating-iso-dock {
     position: fixed !important;
     right: calc(16px + env(safe-area-inset-right, 0px)) !important;
