@@ -126,6 +126,14 @@
       category: 'Reinforcement Learning / Embedded',
       repoUrl: 'https://github.com/jvstin47/UNO-Q-Arena-Edge-AI-Retro-Gaming-on-Arduino-UNO-Q',
       summary: 'Embedded deep RL policy hooked into a Sega Genesis emulator execution loop running at 60 FPS on micro-hardware.'
+    },
+    {
+      id: '11',
+      slug: 'afterlight',
+      title: 'Afterlight — Interactive 3D Lunar Archive',
+      category: 'Planetary 3D WebGL / Archival',
+      repoUrl: 'https://github.com/jvstin47/AfterLight',
+      summary: 'Immersive 3D planetary archive and simulation of humanity\'s permanent artifacts at the Apollo 12 / Surveyor 3 site with Three.js regolith photometry shaders, Vidicon CRT scanlines, and NASA archival telemetry.'
     }
   ];
 
@@ -141,13 +149,15 @@
       'autometer',
       'opportunity-os',
       'crt-lock',
-      'uno-q-arena'
+      'uno-q-arena',
+      'afterlight'
     ],
     '~/projects/phoenix-uav': ['README.md', 'telemetry.py', 'npu_bench.log', 'mission_cockpit.url', 'hardware_specs.txt'],
     '~/projects/camera-tracking': ['README.md', 'tracking_pipeline.py', 'pose_estimator.py', 'repo.url', 'freed_protocol.txt'],
     '~/projects/f1-strategy': ['README.md', 'strategy_solver.py', 'monte_carlo_10k.py', 'degradation_model.txt'],
     '~/projects/captain-lakshmi': ['README.md', 'canvas_renderer.ts', 'frame_stream.json', 'live_demo.url'],
     '~/projects/chord-analyzer': ['README.md', 'demucs_pipeline.py', 'btc_transformer.py', 'mir_pipeline.txt'],
+    '~/projects/afterlight': ['README.md', 'lunar_scene.js', 'regolith_shader.glsl', 'apollo12_registry.csv', 'repo.url'],
     '~/projects/aroggyagram': ['README.md', 'triage_agent.ts', 'proximity_router.ts', 'clinical_flow.txt'],
     '~/projects/autometer': ['README.md', 'pulse_sensor.dart', 'upi_generator.dart', 'fare_rules.txt'],
     '~/projects/opportunity-os': ['README.md', 'task_engine.kt', 'work_manager.kt', 'state_machine.txt'],
@@ -594,7 +604,48 @@ class RetroGamepadPolicy(torch.nn.Module):
         return self.conv(state)`,
     '~/projects/uno-q-arena/genesis_emulator.c': `// Zero-overhead Genesis SRAM hook reading video memory`,
     '~/projects/uno-q-arena/reward_function.txt': `PPO REWARD OPTIMIZATION CRITERIA:
-R = +10.0 * (ScoreDelta) + 2.0 * (SurvivalSeconds) - 50.0 * (CollisionEvent)`
+R = +10.0 * (ScoreDelta) + 2.0 * (SurvivalSeconds) - 50.0 * (CollisionEvent)`,
+
+    /* 11. AFTERLIGHT */
+    '~/projects/afterlight/README.md': `# AFTERLIGHT — The machines that stayed behind.
+
+**Interactive 3D Lunar Archive** · Statio Cognitum (Apollo 12 & Surveyor 3)
+Built with Three.js (WebGL), PBR Regolith Photometry, NASA Technical Reports Server Archives.
+
+## Mission Overview
+On November 19, 1969, Apollo 12 executed humanity's first precision piloted extraterrestrial landing, setting Lunar Module Intrepid down just 163m from the robotic Surveyor 3 lander. AFTERLIGHT is an interactive digital archive dedicated to the permanent monuments of human curiosity.
+
+## Technical Architecture
+• Three.js WebGL terrain rendering with real LROC Narrow Angle Camera elevation maps
+• Photometric opposition surge (Heiligenschein) retroreflective shader
+• 1969 Surveyor Vidicon CRT scanline emulation mode & 25-point optical Reseau grid
+• Quindar tone acoustic sequencer & NASA ground-to-air communications archive
+
+## Repository
+• GitHub: https://github.com/jvstin47/AfterLight`,
+    '~/projects/afterlight/lunar_scene.js': `// Three.js Scene Configuration: Statio Cognitum
+import * as THREE from 'three';
+export class LunarScene {
+  constructor() {
+    this.scene = new THREE.Scene();
+    this.solarFlux = 1361.0; // W/m^2 vacuum solar constant
+    this.shadowHardness = 1.0; // Zero atmospheric scatter
+  }
+}`,
+    '~/projects/afterlight/regolith_shader.glsl': `// Lunar Regolith Photometric Shader
+// Models retroreflective Heiligenschein opposition surge
+uniform vec3 uSunDirection;
+uniform float uOppositionExponent;
+void main() {
+  float cosTheta = dot(normalize(vNormal), normalize(uSunDirection));
+  float opposition = pow(max(dot(vViewDir, uSunDirection), 0.0), uOppositionExponent);
+  gl_FragColor = vec4(vec3(cosTheta + opposition * 0.4), 1.0);
+}`,
+    '~/projects/afterlight/apollo12_registry.csv': `artifact,coordinates,launch_date,mass_kg,condition
+Surveyor 3,3.01239°S 23.42157°W,1967-04-17,281,Permanent (Surveyor Crater)
+Intrepid LM Descent Stage (LM-6),3.01239°S 23.42157°W,1969-11-14,2211,Permanent (Ocean of Storms)
+ALSEP Array A (SNAP-27 RTG),3.01239°S 23.42157°W,1969-11-19,57,Decommissioned (1977)`,
+    '~/projects/afterlight/repo.url': `https://github.com/jvstin47/AfterLight`
   };
 
   return {

@@ -4,8 +4,8 @@ const TerminalEngine = require('./js/services/terminal-engine');
 const Formatters = require('./js/utils/formatters');
 
 console.log('1. Testing DataStore...');
-console.assert(DataStore.projects.length === 10, 'Expected 10 projects');
-console.assert(DataStore.fileSystem['~/projects'].length === 10, 'Expected 10 project folders');
+console.assert(DataStore.projects.length === 11, 'Expected 11 projects');
+console.assert(DataStore.fileSystem['~/projects'].length === 11, 'Expected 11 project folders');
 console.assert(DataStore.getFile('bio.txt').includes('Justin Joe Mathew'), 'bio.txt match');
 console.assert(DataStore.getProject('phoenix-uav').sihTrack.includes('SIH 26177'), 'phoenix-uav match');
 
