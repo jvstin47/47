@@ -55,6 +55,7 @@
         { id: 'proj-lakshmi', title: 'Captain Lakshmi Invicta Archive', category: 'Projects', badge: 'Canvas 2D', action: () => this.jumpTo('#p6', 'projects.html#p6') },
         { id: 'proj-chord', title: 'Song Chord Analyzer (macOS)', category: 'Projects', badge: 'PyTorch/MIR', action: () => this.jumpTo('#p7', 'projects.html#p7') },
         { id: 'proj-uno', title: 'UNO-Q Arena Retro RL Engine', category: 'Projects', badge: 'Edge AI', action: () => this.jumpTo('#p9', 'projects.html#p9') },
+        { id: 'proj-afterlight', title: 'AFTERLIGHT — 3D Lunar Archive (Apollo 12)', category: 'Projects', badge: 'Three.js 3D', action: () => this.jumpTo('#p11', 'projects.html#p11') },
 
         // Actions & Controls
         { id: 'act-theme', title: 'Toggle Light / Dark Mode', category: 'Actions', shortcut: 'L', action: () => this.toggleTheme() },
